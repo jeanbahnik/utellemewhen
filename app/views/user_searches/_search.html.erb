@@ -1,0 +1,54 @@
+<!-- TODO Nex-->
+<div id="search">
+	<% if @user and @user.errors.any? %>
+	<div id="error_explanation">
+   	<h2><%= pluralize(@user.errors.count, "error") %> prohibited this race from being saved:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+   </div>
+	<% end %>
+	
+	<%= form_tag user_searches_path, :id => "user_search" do %>
+		<%= label_tag :name, "Name of Race:" %>
+		<%= text_field_tag :name, params[:name] %>
+		<%= submit_tag "Tell Me When" %><br />
+		
+		<% if not logged_in?  %>
+			<div id="user-email">
+				<%= label_tag :email %>
+				<%= text_field_tag :email %>
+				<span class="help-text">Email Required</span>
+			</div>
+		<% end %>
+		
+		<%= link_to "Advanced", '', :id => "show-advanced-link" %>
+		<div id="advanced-search">
+			<p>
+				<%= label_tag :city %>
+				<%= select_tag :city , options_for_select(get_cities) %>
+			</p>
+			
+			<p>
+				<%= label_tag :start %>
+				<%= date_select :race, :start %>
+			</p>
+			<p>
+				<%= label_tag :end %>
+				<%= date_select :race, :end %>
+			</p>
+			<p>
+				<%= label_tag :size %>
+				<%= select_tag :size, options_for_select(get_sizes) %>
+			</p>
+			<p>
+				<%= label_tag :race_type %>
+				<%= select_tag :race_types, options_for_select(get_race_types) %>
+			</p>
+		</div>
+	
+		
+	<% end %>
+</div>

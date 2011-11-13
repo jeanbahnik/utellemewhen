@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  city: MyString
+  type: 
+  registration_on: 2011-11-12
+  race_on: 2011-11-12
+  size: MyString
+
+two:
+  name: MyString
+  city: MyString
+  type: 
+  registration_on: 2011-11-12
+  race_on: 2011-11-12
+  size: MyString

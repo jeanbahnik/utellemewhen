@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_on: 2011-11-12
+  end_on: 2011-11-12
+  user_id: 1
+  city: MyString
+  type: 
+  size: MyString
+
+two:
+  start_on: 2011-11-12
+  end_on: 2011-11-12
+  user_id: 1
+  city: MyString
+  type: 
+  size: MyString

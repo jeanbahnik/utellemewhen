@@ -13,6 +13,7 @@ group :production do
 	gem 'pg'
 end
 
+gem 'json'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,7 +26,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'

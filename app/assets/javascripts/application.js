@@ -7,3 +7,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(function(){
+	$('#show-advanced-link').click(function(event){
+		n = $('#advanced-search');
+		n.slideToggle();
+		if ($('#show-advanced-link')[0].innerHTML == "Advanced") {
+			$('#show-advanced-link')[0].innerHTML = "Close";
+			
+		}else {
+			$('#show-advanced-link')[0].innerHTML = "Advanced";
+		}
+		event.preventDefault();
+	});
+	
+	$('#condition').change(function(event){
+		$('#search_form').submit();
+	});
+});
