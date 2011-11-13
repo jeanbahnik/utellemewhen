@@ -6,7 +6,6 @@ module RacesHelper
     cities = races.collect { |race| race.city if !race.city.blank? }
     
     cities.sort!.uniq!
-    
     cities.unshift(["All",nil])
   end 
   

@@ -21,10 +21,8 @@ class UserMailer < ActionMailer::Base
  def search_mailer(user_search, race, race_changed_value, is_it_new)
    @user_search = user_search
    @race = race
-   @race_changed_value
-   @is_it_new
 
-      mail(:to => @user_search.user.email, :subject => "We've found new races that fit your search")
+      mail(:to => @user_search.user.email, :subject => "We've found a new race that fit your search")
  end
  
  def auto_generated_user_email(user, password)
