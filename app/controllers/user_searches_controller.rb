@@ -28,7 +28,7 @@ class UserSearchesController < ApplicationController
   # POST /races
   # POST /races.json
   def create
-    require 'Date'
+    require 'date'
     if not logged_in?
       
       # generate a user password
