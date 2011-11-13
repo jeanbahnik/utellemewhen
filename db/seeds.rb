@@ -62,7 +62,7 @@ puts "Created a race"
 
 UserSearch.destroy_all
 
-UserSearch.create :name => "Chicago Marathon"
+UserSearch.create :name => "Chicago Marathon",
                   :start_on => "4/29/2012",
                   :end_on => "6/30/2012",
                   :user_id => User.first.id,
@@ -98,7 +98,7 @@ UserSearch.create :start_on => "1/1/2012",
                   :category => "10 Miles",
                   :size => "3000-10,000"
 
-UserSearch.create :name => "Chicago Marathon"
+UserSearch.create :name => "Chicago Marathon",
                   :start_on => "12/01/2011",
                   :end_on => "12/31/2012",
                   :user_id => User.first.id,

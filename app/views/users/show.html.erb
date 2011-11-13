@@ -21,11 +21,14 @@
 
 
 <div class="user-searches">
+	
+	<h2>User Queries</h2>
 	<ul>
 		<% @user.user_searches.each do |s| %>
 		<li>
+			Name: <%= s.name %><br />
 			City: <%= s.city %><br />
-			Type: <%#= s.race_type %><br />
+			Category: <%#= s.category %><br />
 			Size: <%= s.size %><br />
 			Start: <%= s.start_on %><br />
 			End: <%= s.end_on %><br />
