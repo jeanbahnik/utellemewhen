@@ -162,13 +162,23 @@ class RacesController < ApplicationController
       user_searches = user_searches.where(["size IS NULL OR size = ?", race.size])
     end
 
-    if race.race_type.present?
-      user_searches = user_searches.where(["type IS NULL OR type = ?",race.race_type])
-    end
+    # if race.race_type.present?
+    #   user_searches = user_searches.where(["type IS NULL OR type = ?",race.race_type])
+    # end
 
     if race.race_on.present?
       user_searches = user_searches.where(["start_on <= ? AND end_on >= ?",race.race_on,race.race_on])
     end
+    
+    if race.name.present?
+    	user_searches = user_searches.where(["name IS NULL OR name LIKE ?" race.name])
+    end
+
+
+    if race.race_type.present?
+      user_searches = user_searches.where(["category IS NULL OR category = ?",race.race_type])
+    end
+    
     
     return user_searches
     
