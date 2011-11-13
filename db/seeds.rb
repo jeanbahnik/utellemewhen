@@ -62,73 +62,75 @@ puts "Created a race"
 
 UserSearch.destroy_all
 
-UserSearch.create :start_on => "4/29/2012",
+UserSearch.create :name => "Chicago Marathon"
+                  :start_on => "4/29/2012",
                   :end_on => "6/30/2012",
                   :user_id => User.first.id,
                   :city => "Chicago",
-                  :type => "Half Marathon",
+                  :category => "Half Marathon",
                   :size => "< 3000"
 
 UserSearch.create :start_on => "12/15/2011",
                   :end_on => "12/31/2011",
                   :user_id => User.first.id,
                   :city => "Chicago",
-                  :type => "10 Miles",
+                  :category => "10 Miles",
                   :size => "3000-10,000"
                   
 UserSearch.create :start_on => "11/01/2011",
                   :end_on => "11/01/2012",
                   :user_id => User.first.id,
                   :city => "Chicago",
-                  :type => "Half Marathon",
+                  :category => "Half Marathon",
                   :size => "< 3000"
 
 UserSearch.create :start_on => "1/1/2012",
                   :end_on => "6/30/2012",
                   :user_id => User.first.id,
                   :city => "Chicago",
-                  :type => "Half Marathon",
+                  :category => "Half Marathon",
                   :size => "< 3000"
 
 UserSearch.create :start_on => "1/1/2012",
                   :end_on => "5/1/2012",
                   :user_id => User.first.id,
                   :city => "Chicago",
-                  :type => "10 Miles",
+                  :category => "10 Miles",
                   :size => "3000-10,000"
 
-UserSearch.create :start_on => "12/01/2011",
-                  :end_on => "12/31/2011",
+UserSearch.create :name => "Chicago Marathon"
+                  :start_on => "12/01/2011",
+                  :end_on => "12/31/2012",
                   :user_id => User.first.id,
                   :city => "Chicago",
-                  :type => "",
+                  :category => "",
                   :size => ""
 
 UserSearch.create :start_on => "3/1/2012",
                   :end_on => "4/1/2012",
                   :user_id => User.last.id,
                   :city => "Chicago",
-                  :type => "10 Miles",
+                  :category => "10 Miles",
                   :size => "3000-10,000"
 
 UserSearch.create :start_on => "1/1/2011",
                   :end_on => "1/1/2013",
                   :user_id => User.last.id,
                   :city => "Chicago",
-                  :type => "",
+                  :category => "",
                   :size => "< 3000"
 
 UserSearch.create :start_on => "",
                   :end_on => "",
                   :user_id => User.last.id,
                   :city => "Chicago",
-                  :type => "Half Marathon",
+                  :category => "Half Marathon",
                   :size => ">10,000"
 
 UserSearch.create :start_on => "",
                   :end_on => "",
                   :user_id => User.last.id,
                   :city => "Chicago",
-                  :type => "Full Marathon",
+                  :category => "Full Marathon",
                   :size => "< 3000"
 
