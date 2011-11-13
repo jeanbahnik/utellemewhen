@@ -171,12 +171,12 @@ class RacesController < ApplicationController
     end
     
     if race.name.present?
-    	user_searches = user_searches.where(["name IS NULL OR name LIKE ?" race.name])
+    	user_searches = user_searches.where(["name IS NULL OR name LIKE ?", race.name])
     end
 
 
     if race.race_type.present?
-      user_searches = user_searches.where(["category IS NULL OR category = ?",race.race_type])
+      user_searches = user_searches.where(["category IS NULL OR category = ?", race.race_type])
     end
     
     
