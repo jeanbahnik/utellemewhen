@@ -49,6 +49,7 @@ class UserSearchesController < ApplicationController
     @uSearch = UserSearch.new
     @uSearch.user = @user
     @uSearch.city = params[:city]
+    @uSearch.name = params[:name]
     @uSearch.size = params[:size]
     #@uSearch.type = params[:race_types]
     # start_at = Date(params[:race]['start(1i)'].to_i,params[:race]['start(2i)'].to_i,params[:race]['start(3i)'].to_i)
