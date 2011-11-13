@@ -10,7 +10,7 @@ module RacesHelper
     cities.unshift(["All",nil])
   end 
   
-  def get_race_types
+  def get_categories
     races = Race.all
     
     rTypes = races.collect { |race| race.race_type if !race.race_type.blank? }

@@ -51,11 +51,11 @@ class UserSearchesController < ApplicationController
     @uSearch.city = params[:city]
     @uSearch.name = params[:name]
     @uSearch.size = params[:size]
-    #@uSearch.type = params[:race_types]
-    # start_at = Date(params[:race]['start(1i)'].to_i,params[:race]['start(2i)'].to_i,params[:race]['start(3i)'].to_i)
-    #     end_at = Date(params[:race]['end(1i)'].to_i,params[:race]['end(2i)'].to_i,params[:race]['end(3i)'].to_i)
-    #     @uSearch.start_on = start_at
-    #     @uSearch.end_on = end_at
+    @uSearch.category = params[:category]
+    start_at = Date.new(params[:race]['start(1i)'].to_i,params[:race]['start(2i)'].to_i,params[:race]['start(3i)'].to_i)
+    end_at = Date.new(params[:race]['end(1i)'].to_i,params[:race]['end(2i)'].to_i,params[:race]['end(3i)'].to_i)
+    @uSearch.start_on = start_at
+    @uSearch.end_on = end_at
     respond_to do |format|
       if @uSearch.save
         if logged_in?
