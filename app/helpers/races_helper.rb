@@ -4,7 +4,7 @@ module RacesHelper
     races = Race.all
     
     cities = races.collect { |race| race.city if !race.city.blank? }
-    
+    cities.compact
     cities.sort!.uniq!
     cities.unshift(["All",nil])
   end 
@@ -14,7 +14,7 @@ module RacesHelper
     
     rTypes = races.collect { |race| race.race_type if !race.race_type.blank? }
     
-    
+    rTypes.compact
     rTypes.uniq!
     
     rTypes.unshift(["All",nil])
@@ -25,7 +25,7 @@ module RacesHelper
     races = Race.all
     
     sizes = races.collect { |race| race.size if !race.size.blank?}
-    
+    sizes.compact
     sizes.uniq!
     
     sizes.unshift(["All",nil])
