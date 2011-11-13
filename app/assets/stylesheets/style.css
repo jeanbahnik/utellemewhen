@@ -55,6 +55,8 @@ input {
   border-left: 1px solid #eee;
 }
 
+
+
 .topbar .btn {
   border: 0;
 }
@@ -64,6 +66,24 @@ input {
 	display:inline;
 	padding:0 5px;
 }
+
+.topbar-inner, .topbar .fill {
+	background-color:#8181f8;
+	
+	background-repeat: repeat-x;
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#4d6ffd), to(#8181f8));	  		   
+	background-image: -moz-linear-gradient(top, #4d6ffd, #8181f8);
+	background-image: -ms-linear-gradient(top, #4d6ffd, #8181f8);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4d6ffd), color-stop(100%, #8181f8));
+	background-image: -webkit-linear-gradient(top, #4d6ffd, #8181f8);
+	background-image: -o-linear-gradient(top, #4d6ffd, #8181f8);
+	background-image: linear-gradient(top, #4d6ffd, #8181f8);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d6ffd', endColorstr='#8181f8', GradientType=0);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
 .login {
 	float:right;
 	
