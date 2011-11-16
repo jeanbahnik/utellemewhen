@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default :from => "tellmewhen2@gmail.com"
+  default :from => "hi@utellmewhen.com"
   
   def new_user_email(user)
     @user = user
