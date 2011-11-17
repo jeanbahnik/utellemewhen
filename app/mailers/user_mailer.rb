@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def new_user_email(user)
     @user = user
     # @url  = "http://TellMeWhen.com/78HHD7D77SD"
-    mail(:to => user.email, :subject => "Welcome to Tell Me When - Your Marathon Reminder")
+    mail(:to => user.email, :subject => "Welcome to uTellmewhen - Your Marathon Reminder")
   end
   
  def race_mailer(user, race, race_changed_value, is_it_new)
@@ -22,7 +22,7 @@ class UserMailer < ActionMailer::Base
    @user_search = user_search
    @race = race
 
-      mail(:to => @user_search.user.email, :subject => "We've found a new race that fit your search")
+      mail(:to => @user_search.user.email, :subject => "We've found a new race that fits your search")
  end
  
  def auto_generated_user_email(user, password)
@@ -32,7 +32,7 @@ class UserMailer < ActionMailer::Base
    @user = user
    @password = password
    
-   mail(:to => user.email, :subject => "Welcome to Tell Me When - Your Marathon Reminder")
+   mail(:to => user.email, :subject => "Welcome to uTellmewhen - Your Marathon Reminder")
  end
  
 end
