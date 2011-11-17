@@ -31,7 +31,7 @@ class UserMailer < ActionMailer::Base
    
    @user = user
    @password = password
-   
+
    mail(:to => user.email, :subject => "Welcome to uTellmewhen - Your Marathon Reminder")
  end
  
