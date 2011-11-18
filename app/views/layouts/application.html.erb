@@ -6,16 +6,14 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <div id="container">
+<body id="<%= controller.action_name %>">
+  <!-- <div id="container">
     <div id="header">
       <div class="topbar">
         <div class="fill">
           <div class="container">
             <a class="brand" href="/">TellMeWhen</a>
             <ul class="nav">
-              <!-- <li><a href="#about">About</a></li>
-                          <li><a href="#contact">Contact</a></li> -->
             </ul>
  				<div class="login">
       		<% if logged_in? %>
@@ -36,22 +34,19 @@
 
   <div class='container'>
     
-        <div id="notice"><%= notice %></div>
+        <div id="notice"><%= notice %></div> -->
     		
     		<%= yield %>	
   		
-    		<footer>
+    		<!-- <footer>
            <p>&copy; TellMeWhen 2011</p>
          </footer>
 
-  </div>    
-
-	
+  </div>
 </div>
 
   <%= render "shared/zendesk" %>
-  <%= render "shared/googleanalytics" %>
-
+  <%= render "shared/googleanalytics" %> -->
 
 </body>
 </html>
