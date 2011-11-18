@@ -17,6 +17,7 @@ html {
 body {
 	display: block;
 	font-family: Sans-serif;
+	text-shadow: #6374AB 1px 1px 1px;
 	height: 100%;
 }
 
@@ -31,7 +32,7 @@ div {
 }
 
 #index .container {
-	padding-top: 50px;
+	padding-top: 7%;
 }
 
 .box {
@@ -41,6 +42,9 @@ div {
 /*	background-position: bottom right;
 	background-repeat: no-repeat;
 	background-color: transparent;
+	-moz-box-shadow: 2px 2px 1px #fff;
+	-webkit-box-shadow: 2px 2px 1px #fff;
+	box-shadow: 2px 2px 1px #fff;
 */	color: #fff;
 	display: block;
 	font-size: 14px;
@@ -58,7 +62,7 @@ input#name, input#email {
 	background-color: white;
 	border: 2px solid #ffcd98;
 	border-radius: 4px;
-	color: #525654;
+	color: #bbb;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	margin-bottom: .5em;
@@ -107,9 +111,18 @@ footer {
 	text-align: center;
 }
 
+footer a {
+	color: #FF9B30;
+	text-shadow: #000 1px 1px 1px;
+}
+
 h2 {
 	font: bold 42px/44px Arial;
+	text-shadow: #ffcd98 1px 1px 1px;
 	color: #FF9B30;
-	/*font-size: 2em;*/
 	padding: 20px 5px 30px 5px;
+}
+
+form {
+	font-size: 1.2em;
 }
