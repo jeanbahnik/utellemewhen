@@ -1,19 +1,18 @@
 Tellmewhen::Application.routes.draw do
+
   get "home/index"
   get "home/thank_you"
-  
+
   post "sessions/create"
   delete "sessions/destroy"
   get "sessions/new", :as => :new_session
-  
-  resources :user_searches
-  
-  resources :races
 
+  resources :user_searches
+  resources :races
   resources :users
 
   root :to => "home#index"
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
