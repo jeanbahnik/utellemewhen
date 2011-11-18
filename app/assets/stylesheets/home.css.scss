@@ -37,7 +37,7 @@ div {
 
 .box {
 	background-color: rgba(0, 0, 0, 0.75);
-	border:  1px solid #fff;
+	border:  1px solid #bfbfbf;
 	border-radius: 10px;
 /*	background-position: bottom right;
 	background-repeat: no-repeat;
@@ -72,36 +72,62 @@ input#name, input#email {
 	width: 300px;
 }
 
-input#commit {
-	text-align: center;
-	cursor: auto;
-	vertical-align: baseline;
-	margin: 0;
-	outline: 0;
+input#email {
+	width: 250px;
+}
+
+.button {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF9B30), to(#E06506));
+	background: -webkit-linear-gradient(top, #FF9B30, #E06506);
+	background: linear-gradient(top, #FF9B30, #E06506);
 	border: 0;
 	-webkit-transition: all 0.15s linear;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF9B30), to(#E06506));
-	background: -webkit-linear-gradient(top, #FF9B30, #E06506);
-	background: linear-gradient(top, #FF9B30, #E06506);
 	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
 	box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
 	color: white;
+	cursor: pointer;
+	font: 18px/24px Arial;
+	margin: 0;
+	outline: 0;
+	padding: 10px 30px 10px 30px;
+	text-align: center;
 	text-decoration: none;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
-	font: 18px/35px "Museo-700i",Georgia,serif;
-	padding: 12px 30px 12px 30px;
+	vertical-align: baseline;
+}
+
+.button:hover, .button:focus, .button:active {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cdd93e), to(#92b70c));
+	background: -webkit-linear-gradient(top, #cdd93e, #92b70c);
+	background: linear-gradient(top, #cdd93e, #92b70c);
+	border: 0;
+	-webkit-transition: all 0.15s linear;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
+	color: white;
+	cursor: pointer;
+	font: 18px/24px Arial;
+	margin: 0;
+	outline: 0;
+	padding: 10px 30px 10px 30px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+	vertical-align: baseline;
 }
 
 .tellmewhen {
-	height: 81px;
+	height: 61px;
 }
 
 .tellmewhen p {
-	line-height: 81px;
+	line-height: 61px;
 	margin: 0 auto;
-	padding: 2px 0 0 0;
+	/*padding: 2px 0 0 0;*/
 	text-align: center;
 }
 
@@ -121,6 +147,14 @@ h2 {
 	text-shadow: #ffcd98 1px 1px 1px;
 	color: #FF9B30;
 	padding: 20px 5px 30px 5px;
+}
+
+h3 {
+	color: #fff;
+	font-size: 0.9em;
+	text-align: center;
+	/*color: #FF9B30;*/
+	text-shadow: #000 1px 1px 1px;
 }
 
 form {

@@ -28,7 +28,7 @@ class UserSearchesController < ApplicationController
   # POST /races
   # POST /races.json
   def create
-    require 'date'
+    # require 'date'
     if not logged_in?
       
       # generate a user password
@@ -48,14 +48,14 @@ class UserSearchesController < ApplicationController
     
     @uSearch = UserSearch.new
     @uSearch.user = @user
-    @uSearch.city = params[:city]
+    # @uSearch.city = params[:city]
     @uSearch.name = params[:name]
-    @uSearch.size = params[:size]
-    @uSearch.category = params[:category]
-    start_at = Date.new(params[:race]['start(1i)'].to_i,params[:race]['start(2i)'].to_i,params[:race]['start(3i)'].to_i)
-    end_at = Date.new(params[:race]['end(1i)'].to_i,params[:race]['end(2i)'].to_i,params[:race]['end(3i)'].to_i)
-    @uSearch.start_on = start_at
-    @uSearch.end_on = end_at
+    # @uSearch.size = params[:size]
+    #     @uSearch.category = params[:category]
+    #     start_at = Date.new(params[:race]['start(1i)'].to_i,params[:race]['start(2i)'].to_i,params[:race]['start(3i)'].to_i)
+    #     end_at = Date.new(params[:race]['end(1i)'].to_i,params[:race]['end(2i)'].to_i,params[:race]['end(3i)'].to_i)
+    #     @uSearch.start_on = start_at
+    #     @uSearch.end_on = end_at
     respond_to do |format|
       if @uSearch.save
         if logged_in?

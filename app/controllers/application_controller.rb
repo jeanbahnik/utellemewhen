@@ -16,10 +16,10 @@ class ApplicationController < ActionController::Base
   def require_admin 
     if session[:user_id]
       if !current_user.admin?
-        redirect_to root_url, :notice => "Nice try, goofball!"
+        redirect_to root_url, :notice => "Nice try!"
       end
     else 
-      redirect_to root_url, :notice => "Nice try, goofball!"
+      redirect_to root_url, :notice => "Nice try!"
     end
   end
   
