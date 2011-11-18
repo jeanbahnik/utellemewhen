@@ -12,7 +12,6 @@
 	<%= form_tag user_searches_path, :id => "user_search" do %>
 	<%= label_tag :name, "Name of Race:" %>
 	<%= text_field_tag :name, params[:name] %>
-	<%= submit_tag "Tell Me When" %><br />
 
 	<% if not logged_in?  %>
 		<div id="user-email">
@@ -21,6 +20,11 @@
 			<span class="help-text">Email Required</span>
 		</div>
 	<% end %>
+	<div class="tellmewhen">
+		<p>
+			<%= submit_tag "Tell Me When", :id => "commit" %>
+		</p>
+	</div>
 
 <!-- <%= link_to "Advanced", '', :id => "show-advanced-link" %>
 <div id="advanced-search">

@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="<%= controller.action_name %>">
+	<div class='container'>
   <!-- <div id="container">
     <div id="header">
       <div class="topbar">
@@ -38,15 +39,15 @@
     		
     		<%= yield %>	
   		
-    		<!-- <footer>
-           <p>&copy; TellMeWhen 2011</p>
+    	<footer>
+           <p>Questions? Email the team at <%= mail_to "hi@utellmewhen.com" %>, or follow us on Twitter <%= link_to "@utellmewhen", "http://www.twitter.com/#!/utellmewhen" %>.</p>
          </footer>
 
-  </div>
-</div>
+<!--  </div>
+</div> -->
 
   <%= render "shared/zendesk" %>
-  <%= render "shared/googleanalytics" %> -->
+  <%= render "shared/googleanalytics" %>
 
 </body>
 </html>

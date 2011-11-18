@@ -7,13 +7,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-	background-color: #e3effa;
+	background-color: #fff;
 	display: block;
-	margin: 0px;
+	font-family: Quicksand, Sans-serif;
+	font-weight: 300;
 	height: 100%;
+	margin: 0px;
+	text-shadow: 0 1px 0 white;
 }
 
-.row {
+/*.row {
 	content: "";
 	display: table;
 	margin: 0 auto;
@@ -32,7 +35,7 @@ body {
 	padding: 6px;
 	text-align: center;	
 	width: 300px;
-}
+}*/
 
 .container {
 	background-color: #fff;
@@ -40,6 +43,10 @@ body {
 	padding-top: 10px;
 	position: absolute;
 	width: 100%;
+}
+
+div {
+	display: block;
 }
 
 #index .container {
@@ -50,17 +57,67 @@ body {
 
 .box {
 	background-color: rgba(255, 255, 255, 0.75);
-	border:  2px solid #F7DD74;
+	border:  2px solid #330099;
 	border-radius: 10px;
 	height: auto;
 	margin: 0 auto;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	padding: 6px;
 	text-align: center;
 	width: 960px;
 }
 
-.box.sm {
+input#name, input#email {
+	background-color: white;
+	border: 3px solid #330099;
+	border-radius: 3px;
+	color: #525654;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	margin-bottom: .5em;
+	margin-top: .4em;
+	max-width: 95%;
+	padding: .6em .5em;
+}
+
+input#commit {
+	text-align: center;
+	cursor: auto;
+	vertical-align: baseline;
+	margin: 0;
+	outline: 0;
+	border: 0;
+	-webkit-transition: all 0.15s linear;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF9B30), to(#E06506));
+	background: -webkit-linear-gradient(top, #FF9B30, #E06506);
+	background: linear-gradient(top, #FF9B30, #E06506);
+	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
+	color: white;
+	text-decoration: none;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+	font: 18px/35px "Museo-700i",Georgia,serif;
+	padding: 12px 30px 12px 30px;
+}
+
+.tellmewhen {
+	/*background: #F1F8FD;*/
+	height: 81px;
+}
+
+.tellmewhen p {
+	line-height: 81px;
+	margin: 0 auto;
+	padding: 2px 0 0 0;
+	text-align: center;
+	/*width: 940px;*/
+}
+
+
+
+/*.box.sm {
 	background-color: rgba(255, 255, 255, 0.90);
 	width: 400px;
 }
@@ -74,7 +131,7 @@ body {
 	padding: 3px;
 }
 
-/*.book-nav {
+.book-nav {
 	padding: 0 10px;
 }
 
@@ -84,3 +141,9 @@ body {
 .book-nav .next {
 	float: right;
 }*/
+
+footer {
+	color: #000;
+	font-size: 0.8em;
+	text-align: center;
+}
