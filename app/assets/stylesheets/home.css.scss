@@ -10,36 +10,13 @@ body {
 	background-color: #fff;
 	display: block;
 	font-family: Sans-serif;
-	/*font-weight: 300;*/
 	height: 100%;
 	margin: 0px;
 	text-shadow: 0 1px 0 white;
 }
 
-/*.row {
-	content: "";
-	display: table;
-	margin: 0 auto;
-	padding-bottom: 20px;
-	zoom: 1;
-}
-
-.column {
-	background-color: rgba(255, 255, 255, 0.80);
-	border: 2px solid #F7DD74;
-	border-radius: 10px;
-	display: inline;
-	float: left;
-	height: auto;
-	margin: 5px;
-	padding: 6px;
-	text-align: center;	
-	width: 300px;
-}*/
-
 .container {
 	background-color: #fff;
-	/*height: 100%;*/
 	padding-top: 10px;
 	position: absolute;
 	width: 100%;
@@ -50,7 +27,6 @@ div {
 }
 
 #index .container {
-	/*background-image:image-url("WinnieThePoohWallpaper1024.jpg");*/
 	background-color: #fff;
 	padding-top: 50px;
 }
@@ -103,7 +79,6 @@ input#commit {
 }
 
 .tellmewhen {
-	/*background: #F1F8FD;*/
 	height: 81px;
 }
 
@@ -112,35 +87,7 @@ input#commit {
 	margin: 0 auto;
 	padding: 2px 0 0 0;
 	text-align: center;
-	/*width: 940px;*/
 }
-
-
-
-/*.box.sm {
-	background-color: rgba(255, 255, 255, 0.90);
-	width: 400px;
-}
-
-.block {
-	background-color: #F7DD74;
-	border:  2px solid #b9a557;
-	border-radius: 10px;
-	display: block;
-	margin: 6px;
-	padding: 3px;
-}
-
-.book-nav {
-	padding: 0 10px;
-}
-
-.book-nav .previous {
-	float: left;
-}
-.book-nav .next {
-	float: right;
-}*/
 
 footer {
 	color: #000;

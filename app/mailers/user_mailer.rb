@@ -3,7 +3,6 @@ class UserMailer < ActionMailer::Base
   
   def new_user_email(user)
     @user = user
-    # @url  = "http://TellMeWhen.com/78HHD7D77SD"
     mail(:to => user.email, :subject => "Welcome to uTellmewhen - Your Marathon Reminder")
   end
   
@@ -34,5 +33,4 @@ class UserMailer < ActionMailer::Base
 
    mail(:to => user.email, :subject => "Welcome to uTellmewhen - Your Marathon Reminder")
  end
- 
 end
