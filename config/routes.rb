@@ -5,7 +5,7 @@ Tellmewhen::Application.routes.draw do
 
   post "sessions/create"
   delete "sessions/destroy"
-  get "sessions/new", :as => :new_session
+  get "sessions/new", :as => :login
 
   resources :user_searches
   resources :races

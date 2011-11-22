@@ -31,11 +31,7 @@ div {
 	display: block;
 }
 
-#index .container {
-	padding-top: 7%;
-}
-
-#thank_you .container {
+#index, #thank_you, #new .container {
 	padding-top: 7%;
 }
 
@@ -62,7 +58,7 @@ div {
 	width: 760px;
 }
 
-input#name, input#email {
+input/*, input#name, input#email, input#password*/ {
 	background-color: white;
 	border: 2px solid #ffcd98;
 	border-radius: 4px;
@@ -80,7 +76,11 @@ input#email {
 	width: 250px;
 }
 
-.button {
+input#password {
+	width: 200px;
+}
+
+input.button {
 	background: #F0801B;
 	background: -moz-linear-gradient(top, #FF9B30, #E06506);
 	background: -ms-linear-gradient(top, #FF9B30, #E06506);
@@ -108,6 +108,7 @@ input#email {
 	text-decoration: none;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
 	vertical-align: baseline;
+	width: auto;
 }
 
 .button:hover, .button:focus, .button:active {
