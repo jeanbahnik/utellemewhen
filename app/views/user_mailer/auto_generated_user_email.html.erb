@@ -2,13 +2,11 @@
 
 <p>An new user account has been created on your behalf. This account was generated for your convenience.</p>
 
-<p>To log in please use your email and the password we provided in this email. You can change your password when you log in.</p>
-
-<p><strong>PASSWORD:</strong> <%= @password %></p>
+<p>Change your password by following this link: <%= link_to "Complete your signup", edit_user_url(@user, :m => @password, :e => @user.email) %></p>
 
 <p>By creating race reminders, we will alert you when the marathon registration opens. Never miss a race again.</p>
 
 <p>Regards,</p>
 
 <p>The uTellmewhen Team</p>
-http://utellmewhen.com/
+<%= link_to "http://utellmewhen.com", root_url %>

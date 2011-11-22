@@ -17,12 +17,12 @@ class UserSearchesController < ApplicationController
   end
 
 
-  def generate_password(len)
+  def generate_temp_password(len)
     chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
     newpass = ""
     1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
     return newpass
-    
+
   end
 
   # POST /races
@@ -30,12 +30,12 @@ class UserSearchesController < ApplicationController
   def create
     # require 'date'
     if not logged_in?
-      
-      # generate a user password
-      new_password = generate_password(8)
-      
-      @user = User.new :email => params[:email], :password => new_password, :password_confirmation => new_password
-      
+
+      # generate a temporary user password
+      new_password = generate_temp_password(8)
+
+      @user = User.new :email => params[:email], :password => new_password, :password_confirmation => new_password, :registered => false
+
       if @user.save
         UserMailer.auto_generated_user_email(@user, new_password).deliver
       else

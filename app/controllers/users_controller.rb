@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  
+  before_filter :require_user, :except => [:new, :create]
 
   # GET /users/1
   # GET /users/1.json
@@ -50,6 +51,8 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+    user_params = params[:user]
+    user_params[:registered] = true
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
