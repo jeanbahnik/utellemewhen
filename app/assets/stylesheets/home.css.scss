@@ -1,10 +1,13 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$dark-orange: #f0801b;
+$light-orange: #E06506;
+$dark-blue: #2a7fb5;
+$light-blue: #6388a1;
+$black: #000;
+$white: #fff;
 
 html {
 	background: url(november2011.jpg) no-repeat center center fixed;
@@ -37,15 +40,9 @@ div {
 
 .box {
 	background-color: rgba(0, 0, 0, 0.55);
-	border:  2px solid #f0801b;
+	border:  2px solid $dark-orange;
 	border-radius: 10px;
-/*	background-position: bottom right;
-	background-repeat: no-repeat;
-	background-color: transparent;
-	-moz-box-shadow: 2px 2px 1px #fff;
-	-webkit-box-shadow: 2px 2px 1px #fff;
-	box-shadow: 2px 2px 1px #fff;
-*/	color: #fff;
+	color: #fff;
 	display: block;
 	font-size: 14px;
 	font-weight: bold;
@@ -58,9 +55,9 @@ div {
 	width: 760px;
 }
 
-input/*, input#name, input#email, input#password*/ {
+input {
 	background-color: white;
-	border: 2px solid #f0801b;
+	border: 2px solid $dark-orange;
 	border-radius: 4px;
 	color: #bbb;
 	font-family: Helvetica, Arial, sans-serif;
@@ -81,13 +78,13 @@ input#password {
 }
 
 input.button {
-	background: #f0801b;
-	background: -moz-linear-gradient(top, #f0801b, #E06506);
-	background: -ms-linear-gradient(top, #f0801b, #E06506);
-	background: -o-linear-gradient(top, #f0801b, #E06506);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f0801b), to(#E06506));
-	background: -webkit-linear-gradient(top, #f0801b, #E06506);
-	background: linear-gradient(top, #f0801b, #E06506);
+	background: $dark-orange;
+	background: -moz-linear-gradient(top, $dark-orange, $light-orange);
+	background: -ms-linear-gradient(top, $dark-orange, $light-orange);
+	background: -o-linear-gradient(top, $dark-orange, $light-orange);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($dark-orange), to($light-orange));
+	background: -webkit-linear-gradient(top, $dark-orange, $light-orange);
+	background: linear-gradient(top, $dark-orange, $light-orange);
 	border: 0;
 	-webkit-transition: all 0.15s linear;
 	-moz-border-radius: 5px;
@@ -112,13 +109,13 @@ input.button {
 }
 
 .button:hover, .button:focus, .button:active {
-	background: #2a7fb5;
-	background: -moz-linear-gradient(top, #2a7fb5, #6388a1);
-	background: -ms-linear-gradient(top, #2a7fb5, #6388a1);
-	background: -o-linear-gradient(top, #2a7fb5, #6388a1);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2a7fb5), to(#6388a1));
-	background: -webkit-linear-gradient(top, #2a7fb5, #6388a1);
-	background: linear-gradient(top, #2a7fb5, #6388a1);
+	background: $dark-blue;
+	background: -moz-linear-gradient(top, $dark-blue, $light-blue);
+	background: -ms-linear-gradient(top, $dark-blue, $light-blue);
+	background: -o-linear-gradient(top, $dark-blue, $light-blue);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($dark-blue), to($light-blue));
+	background: -webkit-linear-gradient(top, $dark-blue, $light-blue);
+	background: linear-gradient(top, $dark-blue, $light-blue);
 	border: 0;
 	-webkit-transition: all 0.15s linear;
 	-moz-border-radius: 5px;
@@ -152,28 +149,28 @@ input.button {
 }
 
 footer {
-	color: #fff;
+	color: $white;
 	font-size: 0.8em;
 	text-align: center;
 }
 
 footer a {
-	color: #f0801b;
-	text-shadow: #000 1px 1px 1px;
+	color: $dark-orange;
+	text-shadow: $black 1px 1px 1px;
 }
 
 h2 {
-	color: #f0801b;
+	color: $dark-orange;
 	font: bold 42px/44px Arial;
 	padding: 20px 5px 30px 5px;
-	text-shadow: #000 1px 1px 1px;
+	text-shadow: $black 1px 1px 1px;
 }
 
 h3 {
-	color: #fff;
+	color: $white;
 	font-size: 0.9em;
 	text-align: center;
-	text-shadow: #000 1px 1px 1px;
+	text-shadow: $black 1px 1px 1px;
 }
 
 form {
@@ -187,7 +184,7 @@ form {
 
 #logo {
 	background: url(utmw_logo.gif);
-	border: 1px solid #f0801b;
+	border: 1px solid $dark-orange;
 	-moz-border-radius: 5px;
 	-o-border-radius: 5px;
 	-webkit-border-radius: 5px;
