@@ -36,7 +36,7 @@ div {
 }
 
 .box {
-	background-color: rgba(0, 0, 0, 0.75);
+	background-color: rgba(0, 0, 0, 0.55);
 	border:  1px solid #bfbfbf;
 	border-radius: 10px;
 /*	background-position: bottom right;
@@ -180,4 +180,26 @@ h3 {
 
 form {
 	font-size: 1.2em;
+}
+
+.inside_box {
+	display: inline-block;
+	position: relative;
+}
+
+#logo {
+	background: url(utmw_logo.gif);
+	/*border: 2px solid rgba(0, 0, 0, 0.75);*/
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	/*display: block;*/
+	height: 51px;
+	left: -10px;
+	position: absolute;
+	top: -40px;
+	width: 185px;
+	z-index: 1000;
 }
