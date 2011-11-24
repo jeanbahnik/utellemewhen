@@ -1,40 +1,14 @@
-
-
-<p>
-  <b>First name:</b>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', root_path %>
-
-
-<div class="user-searches">
-	
-	<h2>User Queries</h2>
-	<ul>
+<div class="box">
+	<h2>Hi <%= @user.first_name %> <%= @user.last_name %>!</h2>
+	<p>
+		<b>Logged in as:</b> <%= @user.email %> (<%= link_to 'Edit my profile', edit_user_path(@user) %> | <%= link_to 'Log out', logout_path, :method => :delete %>)
+	</p>
+	<div class="user-searches">
+		<h2>Your beTolds:</h2>
+		<ul>
 		<% @user.user_searches.each do |s| %>
-		<li>
-			Name: <%= s.name %><br />
-			City: <%= s.city %><br />
-			Category: <%#= s.category %><br />
-			Size: <%= s.size %><br />
-			Start: <%= s.start_on %><br />
-			End: <%= s.end_on %><br />
-			created <%= time_ago_in_words(s.created_at.to_time) %>
-		</li>
+			<li><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago)</li>
 		<% end %>
-	</ul>
-	
+		</ul>
+	</div>
 </div>

@@ -4,7 +4,7 @@ Tellmewhen::Application.routes.draw do
   get "home/thank_you"
 
   post "sessions/create"
-  delete "sessions/destroy"
+  delete "sessions/destroy", :as => :logout
   get "sessions/new", :as => :login
 
   resources :user_searches
