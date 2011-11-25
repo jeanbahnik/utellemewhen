@@ -25,17 +25,13 @@ body {
 }
 
 .container {
-	padding-top: 10px;
+	padding-top: 7%;
 	position: absolute;
 	width: 100%;
 }
 
 div {
 	display: block;
-}
-
-#index, #thank_you, #new .container {
-	padding-top: 7%;
 }
 
 .box {
@@ -164,6 +160,7 @@ h2 {
 	font: bold 42px/44px Arial;
 	padding: 20px 5px 30px 5px;
 	text-shadow: $black 1px 1px 1px;
+	padding: 25px 5px 5px 5px;
 }
 
 h3 {
@@ -180,6 +177,7 @@ form {
 .inside_box {
 	display: inline-block;
 	position: relative;
+	width: 725px;
 }
 
 #logo {
@@ -196,4 +194,9 @@ form {
 	top: -40px;
 	width: 185px;
 	z-index: 1000;
+}
+
+#error_explanation {
+	color: red;
+	text-shadow: none;
 }

@@ -16,13 +16,11 @@ class UserSearchesController < ApplicationController
     @uSearch = UserSearch.find(params[:id])
   end
 
-
   def generate_temp_password(len)
     chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
     newpass = ""
     1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
     return newpass
-
   end
 
   # POST /races
@@ -35,9 +33,11 @@ class UserSearchesController < ApplicationController
       new_password = generate_temp_password(8)
 
       @user = User.new :email => params[:email], :password => new_password, :password_confirmation => new_password, :registered => false
-
+      @betold = params[:name]
+      @email = @user.email
+      
       if @user.save
-        UserMailer.auto_generated_user_email(@user, new_password).deliver
+        UserMailer.auto_generated_user_email(@user, new_password, @betold).deliver
       else
         render 'home/index' 
         return
@@ -62,7 +62,7 @@ class UserSearchesController < ApplicationController
           format.html { redirect_to user_path(@user), :notice => 'A query was successfully created.' }
           format.json { render :json => @uSearch, :status => :created, :location => @uSearch }
         else
-          format.html { redirect_to home_thank_you_path}
+          format.html { redirect_to home_thank_you_path(:betold => @betold, :email => @email)}
         end
       else
         format.html { render :action => "new" }

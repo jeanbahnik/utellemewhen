@@ -1,14 +1,21 @@
-<div class="box">
-	<h2>Hi <%= @user.first_name %> <%= @user.last_name %>!</h2>
-	<p>
-		<b>Logged in as:</b> <%= @user.email %> (<%= link_to 'Edit my profile', edit_user_path(@user) %> | <%= link_to 'Log out', logout_path, :method => :delete %>)
-	</p>
-	<div class="user-searches">
-		<h2>Your beTolds:</h2>
-		<ul>
-		<% @user.user_searches.each do |s| %>
-			<li><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago)</li>
-		<% end %>
-		</ul>
+		<h2>Hi <%= @user.first_name %> <%= @user.last_name %>!</h2>
+		<p><b>Logged in as:</b> <%= @user.email %> (<%= link_to 'Edit my profile', edit_user_path(@user) %> | <%= link_to 'Log out', logout_path, :method => :delete %>)</p>
 	</div>
 </div>
+<div class="box">
+	<div class="inside_box">
+		<h2>Add a new query:</h2>
+		<%= render 'user_searches/search' %>
+	</div>
+</div>
+
+<div class="box">
+	<div class="inside_box">
+		<div class="user-searches">
+			<h2>Your beTolds:</h2>
+			<ul>
+			<% @user.user_searches.each do |s| %>
+				<li><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago)</li>
+			<% end %>
+			</ul>
+		</div>

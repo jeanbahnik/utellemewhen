@@ -1,18 +1,14 @@
-<div class="box">
-	<div class="inside_box">
-		<div id="logo" onclick="location.href='http://www.utellmewhen.com';"></div>
-		<h2>Never miss a marathon registration.</h2>
-		<p>Tell us the race, and we'll tell you when to register:</p>
-		<%= render 'user_searches/search' %>
-	
-		<div class="login"><h3>
-		<% if logged_in? %>
-	        Hello, <%= current_user.first_name %>!
-	        <%= link_to "My Profile", user_url(current_user) %> | <%= link_to "Log Out", logout_path, :method => :delete %>
-	    <% else %>
-	      	<%= link_to "Sign In!", login_url %> | <%= link_to "Create an Account", new_user_url %>
-	      <% end %>
-		</h3>
-		</div>
-	</div>
+<h2>Never miss a marathon registration.</h2>
+<p>Tell us the race, and we'll tell you when to register:</p>
+
+<%= render 'user_searches/search' %>
+
+<div class="login"><h3>
+<% if logged_in? %>
+       Hello, <%= current_user.first_name %>!
+       <%= link_to "My Profile", user_url(current_user) %> | <%= link_to "Log Out", logout_path, :method => :delete %>
+   <% else %>
+     	<%= link_to "Sign In!", login_url %> | <%= link_to "Create an Account", new_user_url %>
+     <% end %>
+</h3>
 </div>

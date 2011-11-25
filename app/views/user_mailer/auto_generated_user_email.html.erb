@@ -1,12 +1,13 @@
 <p>Hello there!</p>
 
-<p>An new user account has been created on your behalf. This account was generated for your convenience.</p>
+<p>You asked us to tell you about the <%= @betold %>.</p>
 
-<p>Change your password by following this link: <%= link_to "Complete your signup", edit_user_url(@user, :m => @password, :e => @user.email) %></p>
+<p>An new user account has been created on your behalf so that you can add, edit and monitor your queries.</p>
+
+<p>Complete your registration by following this link: <%= link_to "Complete your signup", edit_user_url(@user, :m => @password, :e => @user.email) %></p>
 
 <p>By creating race reminders, we will alert you when the marathon registration opens. Never miss a race again.</p>
 
-<p>Regards,</p>
-
+<p>Best,</p>
 <p>The uTellmewhen Team</p>
 <%= link_to "http://utellmewhen.com", root_url %>
