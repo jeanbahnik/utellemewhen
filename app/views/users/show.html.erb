@@ -6,16 +6,18 @@
 	<div class="inside_box">
 		<h2>Add a new query:</h2>
 		<%= render 'user_searches/search' %>
+
+<% if @user.user_searches.count > 0 %>
 	</div>
 </div>
-
-<div class="box">
-	<div class="inside_box">
-		<div class="user-searches">
-			<h2>Your beTolds:</h2>
-			<ul>
-			<% @user.user_searches.each do |s| %>
-				<li><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago)</li>
-			<% end %>
-			</ul>
-		</div>
+	<div class="box">
+		<div class="inside_box">
+			<div class="user-searches">
+				<h2>Your beTolds:</h2>
+				<ul>
+				<% @user.user_searches.each do |s| %>
+					<li><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago) <%= link_to 'Delete', s, :confirm => 'Are you sure?', :method => :delete %></li>
+				<% end %>
+				</ul>
+			</div>
+<% end %>

@@ -92,9 +92,10 @@ class UserSearchesController < ApplicationController
   def destroy
     @uSearch = UserSearch.find(params[:id])
     @uSearch.destroy
+    @user = current_user
 
     respond_to do |format|
-      format.html { redirect_to races_url }
+      format.html { redirect_to user_path(@user) }
       format.json { head :ok }
     end
   end
