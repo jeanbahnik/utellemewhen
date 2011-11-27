@@ -16,7 +16,7 @@
 				<h2>Your beTolds:</h2>
 				<ul>
 				<% @user.user_searches.each do |s| %>
-					<li><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago) <%= link_to 'Delete', s, :confirm => 'Are you sure?', :method => :delete %></li>
+					<li id="<%= dom_id(s) %>"><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago) <%= link_to 'Delete', s, :method => :delete%></li><!-- , :remote => true  -->
 				<% end %>
 				</ul>
 			</div>

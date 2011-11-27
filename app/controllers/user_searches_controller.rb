@@ -95,6 +95,7 @@ class UserSearchesController < ApplicationController
     @user = current_user
 
     respond_to do |format|
+      format.js
       format.html { redirect_to user_path(@user) }
       format.json { head :ok }
     end
