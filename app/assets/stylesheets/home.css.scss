@@ -67,14 +67,12 @@ input {
 	max-width: 95%;
 	padding: .6em .5em;
 	width: 300px;
-}
-
-input#email {
-	width: 250px;
-}
-
-input#password {
-	width: 200px;
+	&#email {
+		width: 250px;
+	}
+	&#password {
+		width: 200px;
+	}
 }
 
 input.button {
@@ -116,47 +114,45 @@ input.button {
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($dark-blue), to($light-blue));
 	background: -webkit-linear-gradient(top, $dark-blue, $light-blue);
 	background: linear-gradient(top, $dark-blue, $light-blue);
-	border: 0;
-	-webkit-transition: all 0.15s linear;
-	-moz-border-radius: 5px;
-	-o-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
-	-o-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
-	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
-	box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
-	color: white;
-	cursor: pointer;
-	font: 18px/24px Arial;
-	margin: 0;
-	outline: 0;
-	padding: 10px 30px 10px 30px;
-	text-align: center;
-	text-decoration: none;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
-	vertical-align: baseline;
+	/*border: 0;
+		-webkit-transition: all 0.15s linear;
+		-moz-border-radius: 5px;
+		-o-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
+		-o-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
+		-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
+		box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
+		color: white;
+		cursor: pointer;
+		font: 18px/24px Arial;
+		margin: 0;
+		outline: 0;
+		padding: 10px 30px 10px 30px;
+		text-align: center;
+		text-decoration: none;
+		text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+		vertical-align: baseline;*/
 }
 
 .tellmewhen {
 	height: 61px;
-}
-
-.tellmewhen p {
-	line-height: 61px;
-	margin: 0 auto;
-	text-align: center;
+	p {
+		line-height: 61px;
+		margin: 0 auto;
+		text-align: center;
+	}
 }
 
 footer {
 	color: $white;
 	font-size: 0.8em;
 	text-align: center;
-}
-
-footer a {
-	color: $dark-orange;
-	text-shadow: $black 1px 1px 1px;
+	a {
+		color: $dark-orange;
+		text-shadow: $black 1px 1px 1px;
+	}
 }
 
 h2 {
