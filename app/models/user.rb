@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  # This is used to pull in the validators found in 'app/validators/'
+  include ActiveModel::Validations
 
   has_secure_password
   has_many :user_races
@@ -9,4 +11,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates_presence_of :email
   
+  # custom validator 
+  validates_with RegisteredValidator, :on => :update
 end
+
