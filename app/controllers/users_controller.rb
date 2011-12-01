@@ -26,8 +26,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+
   end
+
 
   # POST /users
   # POST /users.json
@@ -52,7 +53,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     user_params = params[:user]
-    user_params[:registered] = true
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
