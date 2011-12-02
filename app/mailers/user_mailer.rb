@@ -1,5 +1,6 @@
 class UserMailer < ActionMailer::Base
   default :from => "hi@utellmewhen.com"
+  # layout "user_mailer"
   
   def new_user_email(user)
     @user = user
@@ -32,6 +33,6 @@ class UserMailer < ActionMailer::Base
    @password = password
    @betold = betold
 
-   mail(:to => user.email, :subject => "Welcome to uTellmewhen - Your Marathon Reminder")
+   mail(:to => user.email, :subject => "Welcome to uTellmewhen - Your Marathon Reminder", :bcc => "jean@utellmewhen.com")
  end
 end

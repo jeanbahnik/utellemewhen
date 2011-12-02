@@ -1,32 +1,5 @@
-<p>Hello <%= @user_search.user.first_name %> </p>
-
-<p>We've found a new race that fits your reminders:</p>
-
-<h3> Reminder Information: </h3> 
-<ul>
-	<li>
-		Your Reminder Search: <%= @user_search.name %><br />
-		City: <%= @user_search.city %><br />
-		Category: <%= @user_search.category %><br />
-		Size: <%= @user_search.size %><br />
-		Start: <%= @user_search.start_on %><br />
-		End: <%= @user_search.end_on %><br />
-		created <%= time_ago_in_words(@user_search.created_at.to_time) %>
-	</li>
-</ul>
-
-<h3>Race Information:</h3>
-<ul>
-	<li>
-		Race Name: <%= @race.name %><br />
-		City: <%= @race.city %><br />
-		Category: <%= @race.race_type %><br />
-		Size: <%= @race.size %><br />
-		Registration Date: <%= @race.registration_on %><br />
-		Race Date: <%= @race.race_on %><br />
-	</li>
-</ul>
-
-<p>Best,</p>
-<p>The uTellmewhen Team</p>
-<%= link_to "http://utellmewhen.com", root_url %>
+<!-- Hello <%= @user_search.user.first_name %> -->
+We've found a new race that fits your reminders:<br>
+Your Reminder Search: <%= @user_search.name %><br>
+Registration Date: <%= @race.registration_on %><br>
+Race Date: <%= @race.race_on %>
