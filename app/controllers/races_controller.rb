@@ -6,24 +6,27 @@ class RacesController < ApplicationController
   # GET /races
   # GET /races.json
   def index
+
+    @races = Race.order(:name).where("name like ?", "%#{params[:term]}%")
+      render json: @races.map(&:name)
     
-    @races = Race.scoped
-    
-    if params[:name].present?
-      @races = @races.where(["name LIKE ?", "%#{params[:name]}%"])
-    end
-    
-    if params[:city].present?
-      @races = @races.where(["city = ?", "#{params[:city]}"])
-    end
-    
-    if params[:size].present?
-      @races = @races.where(["size = ?", "#{params[:size]}"])
-    end
-    
-    if params[:race_types].present?
-      @races = @races.where(["race_type = ?","#{params[:race_types]}"])
-    end
+    # @races = Race.scoped
+    # 
+    # if params[:name].present?
+    #   @races = @races.where(["name LIKE ?", "%#{params[:name]}%"])
+    # end
+    # 
+    # if params[:city].present?
+    #   @races = @races.where(["city = ?", "#{params[:city]}"])
+    # end
+    # 
+    # if params[:size].present?
+    #   @races = @races.where(["size = ?", "#{params[:size]}"])
+    # end
+    # 
+    # if params[:race_types].present?
+    #   @races = @races.where(["race_type = ?","#{params[:race_types]}"])
+    # end
     
     respond_to do |format|
       format.html # index.html.erb

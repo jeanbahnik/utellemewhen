@@ -10,6 +10,7 @@ Tellmewhen::Application.routes.draw do
   resources :user_searches
   resources :races
   resources :users
+  resources :race_names
 
   root :to => "home#index"
 

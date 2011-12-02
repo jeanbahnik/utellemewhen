@@ -2,7 +2,7 @@
 <div class="clearfix">
 	<%= label_tag :name, "Race: " %>
 	<div class="input">
-		<%= text_field_tag :name, nil, :placeholder => 'Enter your race here' %><!-- , params[:name] -->
+		<%= text_field_tag :name, nil, data: {autocomplete_source: race_names_path}, :placeholder => 'Enter your race here' %><!-- , params[:name] -->
 	</div>
 </div>
 

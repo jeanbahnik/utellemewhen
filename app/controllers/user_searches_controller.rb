@@ -1,5 +1,13 @@
 class UserSearchesController < ApplicationController
   
+  # def name
+  #   race.try(:name)
+  # end
+  # 
+  # def name=(name)
+  #   self.race = Race.find_or_create_by_name(name) if name.present?
+  # end
+  
   # GET /races/1
   # GET /races/1.json
   def show
@@ -49,7 +57,7 @@ class UserSearchesController < ApplicationController
     @uSearch = UserSearch.new
     @uSearch.user = @user
     # @uSearch.city = params[:city]
-    @uSearch.name = params[:name]
+    @uSearch.name = params[:race_name]
     # @uSearch.size = params[:size]
     #     @uSearch.category = params[:category]
     #     start_at = Date.new(params[:race]['start(1i)'].to_i,params[:race]['start(2i)'].to_i,params[:race]['start(3i)'].to_i)

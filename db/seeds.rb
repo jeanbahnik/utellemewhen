@@ -27,6 +27,13 @@ Race.create :name => "Pilgrim Pacer 5-K",
             :size => "< 3000"
 puts "Created a race"
 
+Race.create :name => "Chicago Marathon 2012", 
+            :city => "Chicago" 
+puts "Created a race"
+
+Race.create :name => "Chicago Marathon 2013", 
+            :city => "Chicago" 
+puts "Created a race"
 
 Race.create :name => "Freedom Half Marathon", 
             :city => "Chicago", 
@@ -34,7 +41,6 @@ Race.create :name => "Freedom Half Marathon",
             :race_on => "4/19/2012",
             :size => ">10,000"
 puts "Created a race"
-
 
 Race.create :name => "Wine Vine Run Half-Marathon & 5-K", 
             :city => "Chicago", 
