@@ -7,10 +7,12 @@ gem 'rails', '3.1.1'
 
 group :development do
 	gem 'sqlite3'
+	gem 'rspec-rails', '2.7.0'
 end
 
 group :production do
 	gem 'pg'
+	gem 'rspec', '2.7.0'
 end
 
 gem 'json'
