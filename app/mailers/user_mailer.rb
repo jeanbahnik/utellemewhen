@@ -25,13 +25,14 @@ class UserMailer < ActionMailer::Base
       mail(:to => @user_search.user.email, :subject => "We've found a new race that fits your search")
  end
  
- def auto_generated_user_email(user, password, betold)
+ def auto_generated_user_email(user, email_token, betold)
    # email the new user their auto generated password
    # the user password is useless since it has been encrypted
    
    @user = user
-   @password = password
+   # @password = password
    @betold = betold
+   @email_token = email_token
 
    mail(:to => user.email, :subject => "Welcome to uTellmewhen - Your Marathon Reminder", :bcc => "jean@utellmewhen.com")
  end

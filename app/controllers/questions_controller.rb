@@ -1,17 +1,7 @@
-class UserSearchesController < ApplicationController
-  
-  # def name
-  #   race.try(:name)
-  # end
-  # 
-  # def name=(name)
-  #   self.race = Race.find_or_create_by_name(name) if name.present?
-  # end
-  
-  # GET /races/1
-  # GET /races/1.json
+class QuestionsController < ApplicationController
+
   def show
-    @uSearch = UserSearch.find(params[:id])
+    @uSearch = Questions.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,7 +11,7 @@ class UserSearchesController < ApplicationController
 
   # GET /races/1/edit
   def edit
-    @uSearch = UserSearch.find(params[:id])
+    @uSearch = Questions.find(params[:id])
   end
 
   def generate_temp_password(len)
@@ -35,38 +25,35 @@ class UserSearchesController < ApplicationController
   # POST /races.json
   def create
     # require 'date'
-    if not logged_in?
+    if not user_signed_in?
 
       # generate a temporary user password
       new_password = generate_temp_password(8)
+      new_email_token = generate_temp_password(8)
 
-      @user = User.new :email => params[:email], :password => new_password, :password_confirmation => new_password, :registered => false
+      @user = User.new :email => params[:email], :password => new_password, :password_confirmation => new_password, :registered => false, :email_token => new_email_token
       @betold = params[:name]
       @email = @user.email
       
       if @user.save
-        UserMailer.auto_generated_user_email(@user, new_password, @betold).deliver
+        UserMailer.auto_generated_user_email(@user, new_email_token, @betold).deliver
       else
-        render 'home/index' 
+        render 'home/index'
         return
       end
     else
       @user = current_user
     end
     
-    @uSearch = UserSearch.new
-    @uSearch.user = @user
-    # @uSearch.city = params[:city]
-    @uSearch.name = params[:race_name]
-    # @uSearch.size = params[:size]
-    #     @uSearch.category = params[:category]
-    #     start_at = Date.new(params[:race]['start(1i)'].to_i,params[:race]['start(2i)'].to_i,params[:race]['start(3i)'].to_i)
-    #     end_at = Date.new(params[:race]['end(1i)'].to_i,params[:race]['end(2i)'].to_i,params[:race]['end(3i)'].to_i)
-    #     @uSearch.start_on = start_at
-    #     @uSearch.end_on = end_at
+    @uSearch = Question.new
+    # @uSearch = @user.questions.build(params[:question])
+    @uSearch.users << @user
+    @uSearch.name = params[:name]
+    #raise @uSearch.users.inspect
+    #@user.questions.build_user_question(:uSearch)
     respond_to do |format|
       if @uSearch.save
-        if logged_in?
+        if user_signed_in?
           format.html { redirect_to user_path(@user), :notice => 'A query was successfully created.' }
           format.json { render :json => @uSearch, :status => :created, :location => @uSearch }
         else
@@ -82,11 +69,11 @@ class UserSearchesController < ApplicationController
   # PUT /races/1
   # PUT /races/1.json
   def update
-    @uSearch = UserSearch.find(params[:id])
+    @uSearch = Question.find(params[:id])
     
     respond_to do |format|
       if @uSearch.update_attributes(params[:race])
-        format.html { redirect_to @uSearch, :notice => 'UserSearch was successfully updated.' }
+        format.html { redirect_to @uSearch, :notice => 'Question was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
@@ -98,7 +85,7 @@ class UserSearchesController < ApplicationController
   # DELETE /races/1
   # DELETE /races/1.json
   def destroy
-    @uSearch = UserSearch.find(params[:id])
+    @uSearch = Question.find(params[:id])
     @uSearch.destroy
     @user = current_user
 

@@ -1,23 +1,26 @@
 		<h2>Hi <%= @user.first_name %> <%= @user.last_name %>!</h2>
-		<p><b>Logged in as:</b> <%= @user.email %> (<%= link_to 'Edit my profile', edit_user_path(@user) %> | <%= link_to 'Log out', logout_path, :method => :delete %>)</p>
+		
+		<div class="login">
+		<h3><%= render :partial => "devise/shared/links" %></h3>
+		</div>
 	</div>
 </div>
 <div class="box">
 	<div class="inside_box">
-		<h2>Add a new query:</h2>
-		<%= render 'user_searches/search' %>
+		<h2>Add a new event:</h2>
+		<%= render 'questions/search' %>
 
-<% if @user.user_searches.count > 0 %>
-	</div>
-</div>
-	<div class="box">
-		<div class="inside_box">
-			<div class="user-searches">
-				<h2>Your beTolds:</h2>
-				<ul>
-				<% @user.user_searches.each do |s| %>
-					<li id="<%= dom_id(s) %>"><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago) <%= link_to 'Delete', s, :method => :delete%></li><!-- , :remote => true  -->
-				<% end %>
-				</ul>
+		<% if @user.questions.count > 0 %>
 			</div>
-<% end %>
+		</div>
+			<div class="box">
+				<div class="inside_box">
+					<div class="user-searches">
+						<h2>Your events:</h2>
+						<ul>
+						<% @user.questions.each do |s| %>
+							<li id="<%= dom_id(s) %>"><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago) <%= link_to "Delete", user_question_delete_url(s), :method => :delete %></li>
+						<% end %>
+						</ul>
+					</div>
+		<% end %>

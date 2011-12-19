@@ -2,7 +2,7 @@ $lavender: #94aed4;
 $navy-blue: #132946;
 $off-white: #eff2ec;
 $orange-1: #f28600;
-$orange-2: #ff8d06;
+$orange-2: darken($orange-1, 10%);
 $blue-1: #339bd6;
 $blue-2: #39aced;
 
@@ -27,7 +27,7 @@ $blue-2: #39aced;
 }
 
 html {
-	background: url(november2011.jpg) no-repeat center center fixed;
+	background: url(december2011.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -38,6 +38,7 @@ body {
 	display: block;
 	font-family: "Lucida Grand", Tahoma, Arial, Sans-serif;
 	height: 100%;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -56,10 +57,19 @@ div {
 		content: "";
 		zoom: 1;
 		height: 58px;
+		&.note {
+			text-align: left;
+			height: auto;
+		}
 	}
 	&.input {
 		margin-left: 220px;
 		text-align: left;
+		height: 58px;
+		&.note {
+			text-align: left;
+			height: auto;
+		}
 	}
 }
 
@@ -115,10 +125,10 @@ input.button {
 	-o-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
-	-o-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
-	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
-	box-shadow: inset 0 1px 0 rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 2px rgba(0, 0, 0, 0.3);
+	-o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 2px rgba(0, 0, 0, 0.3);
 	color: $off-white;
 	cursor: pointer;
 	font: 18px "Lucida Grand", Tahoma, Arial, Sans-serif;
@@ -127,8 +137,13 @@ input.button {
 	padding: 10px 30px 10px 30px;
 	text-align: center;
 	text-decoration: none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.45);
 	vertical-align: baseline;
 	width: auto;
+}
+
+input#user_remember_me {
+	height: 48px;
 }
 
 .button:hover, .button:focus, .button:active {
@@ -173,6 +188,9 @@ h3 {
 	color: $off-white;
 	font-size: 0.85em;
 	text-align: center;
+	&.note {
+		text-align: left;
+	}
 }
 
 form {
@@ -186,13 +204,13 @@ form {
 }
 
 #logo {
-	background: url(utmw_logo.gif);
-	border: 1px solid $lavender;
+	background: url(utmw_logo3.png);
+/*	border: 1px solid $lavender;
 	-moz-border-radius: 5px;
 	-o-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	cursor: pointer;
+*/	cursor: pointer;
 	height: 51px;
 	left: -10px;
 	position: absolute;
@@ -235,4 +253,40 @@ a {
       background-color: #FFFCB2;
     }
   }
+}
+
+@media screen and (max-width: 640px) {
+	html {
+		background: url(december2011_640.jpg) no-repeat center center fixed;
+	}
+	.box {
+		border-width: 2px 0;
+		border-radius: 0;
+		-moz-border-radius: 0;
+		-o-border-radius: 0;
+		-webkit-border-radius: 0;
+		padding: 0;
+		width: 100%;
+	}
+	.inside_box {
+		width: 100%;
+	}
+	h1 {
+		font: bold 22px/32px "Lucida Grand", Tahoma, Arial, Sans-serif;
+		margin-top: 30px;
+	}
+	#logo {
+		left: 10px;
+		top: -30px;
+	}
+	label {
+		margin-right: 10px;
+		width: 25%;
+	}
+	div.input {
+		margin-left: 0;
+	}
+	input {
+		width: 50%;
+	}
 }

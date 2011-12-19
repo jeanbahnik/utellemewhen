@@ -1,15 +1,9 @@
-<h1>Never miss a marathon registration again.</h1>
+<h1>Never miss a race registration again.</h1>
 
-<%= render 'user_searches/search' %>
+<%= render 'questions/search'%>
 
-<p><h2>We'll send you three emails: one today to register (optional), one when the registration date is announced and one the day before the registration opens.</h2></p>
+<p><h2>We'll send you three emails: one today to register (optional), one when the registration date is announced and one the day of the registration.</h2></p>
 
-<div class="login"><h3>
-<% if logged_in? %>
-       Hello, <%= current_user.first_name %>!
-       <%= link_to "My Profile", user_url(current_user) %> | <%= link_to "Log Out", logout_path, :method => :delete %>
-   <% else %>
-     	<%= link_to "Sign In!", login_url %> | <%= link_to "Create an Account", new_user_url %>
-     <% end %>
-</h3>
+<div class="login">
+<h3><%= render :partial => "devise/shared/links" %></h3>
 </div>

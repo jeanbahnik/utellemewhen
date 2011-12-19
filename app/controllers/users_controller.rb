@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   
-  before_filter :require_user, :except => [:new, :create]
+  before_filter :authenticate_user!, :except => [:new, :create, :join]
 
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    @user = current_user
 
     respond_to do |format|
       format.html # show.html.erb
@@ -76,4 +76,13 @@ class UsersController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def join
+    @user = User.where(:email => params[:e], :email_token => params[:m]).first
+    puts @user.inspect
+    redirect_to new_user_registration_url and return if @user.nil?
+    sign_in @user
+    redirect_to edit_user_registration_url
+  end
+
 end
