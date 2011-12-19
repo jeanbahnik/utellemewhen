@@ -26,12 +26,14 @@ $blue-2: #39aced;
 	background: linear-gradient(top, $blue-1, $blue-2);
 }
 
-html {
-	background: url(december2011.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+@media screen and (min-width: 641px) {
+	html {
+		background: url(december2011.jpg) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
 }
 
 body {
@@ -258,6 +260,10 @@ a {
 @media screen and (max-width: 640px) {
 	html {
 		background: url(december2011_640.jpg) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 	}
 	.box {
 		border-width: 2px 0;
