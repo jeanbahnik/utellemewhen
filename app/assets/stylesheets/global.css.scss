@@ -75,6 +75,10 @@ div {
 	}
 }
 
+.clear {
+	clear: both;
+}
+
 .box {
 	background-color: rgba(19, 41, 70, 0.6);
 	border:  2px solid $lavender;
@@ -293,7 +297,7 @@ a {
 	}
 	label {
 		margin-right: 10px;
-		width: 33%;
+		width: 25%;
 	}
 	div.input {
 		margin-left: 0;

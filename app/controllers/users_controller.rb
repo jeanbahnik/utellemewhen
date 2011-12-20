@@ -82,7 +82,7 @@ class UsersController < ApplicationController
     puts @user.inspect
     redirect_to new_user_registration_url and return if @user.nil?
     sign_in @user
-    redirect_to edit_user_registration_url
+    redirect_to edit_user_registration_url(:l => params[:l])
   end
 
 end

@@ -43,7 +43,7 @@
 <div class="clearfix">
 	<%= f.label :current_password %>
 	<div class="input">
-		<%= f.password_field :current_password %>
+		<%= f.password_field :current_password, :value => params[:l] %>
 	</div>
 </div>
 <div class="clearfix note">
