@@ -4,7 +4,7 @@ gem 'rails', '3.1.1'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'json'
 gem 'jquery-rails'
-gem 'devise'
+# gem 'devise'
 
 group :development do
 	gem 'sqlite3'

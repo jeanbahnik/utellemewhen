@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   
-  before_filter :authenticate_user!, :except => [:new, :create, :join]
+  before_filter :require_user, :except => [:new, :create]
+  # before_filter :authenticate_user!, :except => [:new, :create, :join]
 
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = current_user
+    @user = User.find(params[:id])
+    # @user = current_user
 
     respond_to do |format|
       format.html # show.html.erb

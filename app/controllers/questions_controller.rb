@@ -24,8 +24,7 @@ class QuestionsController < ApplicationController
   # POST /races
   # POST /races.json
   def create
-    # require 'date'
-    if not user_signed_in?
+    if not logged_in?
 
       # generate a temporary user password
       new_password = generate_temp_password(8)
@@ -53,7 +52,7 @@ class QuestionsController < ApplicationController
     #@user.questions.build_user_question(:uSearch)
     respond_to do |format|
       if @uSearch.save
-        if user_signed_in?
+        if logged_in?
           format.html { redirect_to user_path(@user), :notice => 'A query was successfully created.' }
           format.json { render :json => @uSearch, :status => :created, :location => @uSearch }
         else

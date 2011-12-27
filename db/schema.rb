@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111218175530) do
+ActiveRecord::Schema.define(:version => 20111227070327) do
 
   create_table "answers", :force => true do |t|
     t.integer  "event_id"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(:version => 20111218175530) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email_token"
+    t.string   "password_digest"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,15 +1,15 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  # devise :database_authenticatable, :registerable,
+  #        :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :registered, :email_token
+  # attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :registered, :email_token
   # This is used to pull in the validators found in 'app/validators/'
   include ActiveModel::Validations
 
-  # has_secure_password <-- Commented out for Devise
+  has_secure_password
   has_many :user_races
   has_many :races, :through => :user_races
   has_many :user_questions
@@ -23,4 +23,3 @@ class User < ActiveRecord::Base
   validates_with RegisteredValidator, :on => :update
 
 end
-
