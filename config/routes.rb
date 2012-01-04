@@ -1,4 +1,7 @@
 Tellmewhen::Application.routes.draw do
+  
+  require File.expand_path("../../lib/logged_in_constraint", __FILE__)  
+  
   get "users/join" => "users#join", :as => :join
   
   # devise_for :users
@@ -20,5 +23,7 @@ Tellmewhen::Application.routes.draw do
   resources :race_names
   delete "user_question_delete/:id" => 'UserQuestions#destroy', :as => :user_question_delete
 
+  root :to => "users#show", :constraints => LoggedInConstraint.new(true)
   root :to => "home#index"
+
 end
