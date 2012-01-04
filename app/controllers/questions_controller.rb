@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
       @email = @user.email
       
       if @user.save
-        UserMailer.auto_generated_user_email(@user, new_email_token, new_password, @betold).deliver
+        UserMailer.auto_generated_user_email(@user, new_email_token, @betold).deliver
       else
         render 'home/index'
         return

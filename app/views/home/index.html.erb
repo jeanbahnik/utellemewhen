@@ -1,5 +1,17 @@
 <h1>Never miss a race registration again.</h1>
 
+<!-- <p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p> -->
+<% if @user and @user.errors.any? %>
+<div id="error_explanation">
+	<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
 <%= render 'questions/search'%>
 
 <p><h2>We'll send you three emails: one today to register (optional), one when the registration date is announced and one the day of the registration.</h2></p>

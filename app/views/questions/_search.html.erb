@@ -12,15 +12,6 @@
 		<div class="input">
 			<%= text_field_tag :email, nil, :placeholder => 'Your email' %>
 		</div>
-		<% if @user and @user.errors.any? %>
-		<div id="error_explanation">
-			<ul>
-				<% @user.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-				<% end %>
-			</ul>
-		</div>
-		<% end %>
 	</div>
 <% end %>
 

@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
       @user = User.find(session[:user_id])
     elsif params[:e].present? and params[:m].present?
       @user = User.find_by_email(params[:e])
-      if @user && @user.authenticate(params[:m])
+      if @user && @user.email_token == params[:m]
         session[:user_id] = @user.id
         flash[:notice] = "Thanks for signing in!"
         puts "email link validated"
