@@ -78,12 +78,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def join
-    @user = User.where(:email => params[:e], :email_token => params[:m]).first
-    puts @user.inspect
-    redirect_to new_user_registration_url and return if @user.nil?
-    sign_in @user
-    redirect_to edit_user_registration_url(:l => params[:l])
-  end
+  # def join
+  #   @user = User.where(:email => params[:e], :email_token => params[:m]).first
+  #   puts @user.inspect
+  #   redirect_to new_user_registration_url and return if @user.nil?
+  #   sign_in @user
+  #   redirect_to edit_user_registration_url(:l => params[:l])
+  # end
 
 end
