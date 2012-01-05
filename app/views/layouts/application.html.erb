@@ -8,20 +8,36 @@
   <meta content='width=device-width, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
 </head>
 <body>
-<div class='container'>
-	<div class="box">
-		<div class="inside_box">
-			<div id="logo" onclick="location.href='<%= root_url %>';"></div>
-		<%= yield %>
-		</div>
-	</div>  		
+<div id="wrap">
+	<header>
+		<nav>
+			<ul>
+				<li class="url">
+					<a href="<%= root_url %>" title="Home">Home</a>
+				</li>
+				<% if @user %>
+				<li>
+					Hi <%= @user.first_name %>! - <%= link_to "(log out)", logout_path, :method => :delete %>
+				</li>
+				<% else %>
+				<li>
+					Hi there! - <%= link_to "(log in)", login_url %>
+				</li>
+				<% end %>
+			</ul>
+		</nav>
+	</header>
+	
+	<%= yield %>
+ 		
 	<footer>
-		<p>Questions? Email the team at <%= mail_to "hi@utellmewhen.com" %>, or follow us on Twitter <%= link_to "@utellmewhen", "http://www.twitter.com/#!/utellmewhen" %>. <% if logged_in? %><%= link_to "Log Out", logout_path, :method => :delete %><% else %><%= link_to "Log In", login_url %><% end %></p>
+		<p>Questions? Email the team at <%= mail_to "hi@utellmewhen.com" %>, or follow us on Twitter <%= link_to "@utellmewhen", "http://www.twitter.com/#!/utellmewhen" %>.</p>
 	</footer>
+
 </div>
 
-  	<%= render "shared/getsatisfaction" %>
-  	<%= render "shared/googleanalytics" %>
+  	<%#= render "shared/getsatisfaction" %>
+  	<%#= render "shared/googleanalytics" %>
 
 </body>
 </html>
