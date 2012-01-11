@@ -1,3 +1,11 @@
+<% if not logged_in?  %>
+<div class="clearfix">
+	<div class="input">
+		<h1>Tell us:</h1>
+	</div>
+</div>
+<% end %>
+
 <%= form_tag questions_path, :id => "question" do %>
 <div class="clearfix">
 	<%= label_tag :name, "Event: " %>
@@ -15,8 +23,10 @@
 	</div>
 <% end %>
 
-<div class="tellmewhen">
-	<p><%= submit_tag "Submit", :class => "button" %></p>
+<div class="clearfix">
+	<div class="input">
+		<%= submit_tag "Submit", :class => "button" %>
+	</div>
 </div>
 
 <% end %>

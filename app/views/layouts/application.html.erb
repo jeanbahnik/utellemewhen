@@ -7,37 +7,39 @@
   <%= csrf_meta_tags %>
   <meta content='width=device-width, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
 </head>
-<body>
-<div id="wrap">
-	<header>
-		<nav>
-			<ul>
-				<li class="url">
-					<a href="<%= root_url %>" title="Home">Home</a>
-				</li>
-				<% if @user %>
-				<li>
-					Hi <%= @user.first_name %>! - <%= link_to "(log out)", logout_path, :method => :delete %>
-				</li>
-				<% else %>
-				<li>
-					Hi there! - <%= link_to "(log in)", login_url %>
-				</li>
-				<% end %>
-			</ul>
-		</nav>
-	</header>
-	
-	<%= yield %>
- 		
-	<footer>
-		<p>Questions? Email the team at <%= mail_to "hi@utellmewhen.com" %>, or follow us on Twitter <%= link_to "@utellmewhen", "http://www.twitter.com/#!/utellmewhen" %>.</p>
-	</footer>
-
-</div>
-
+<body id="index">
+	<div class="container">
+		<div class="box">
+			<header>
+				<nav>
+					<div class="url">
+						<a href="<%= root_url %>" title="Home">Home</a>
+					</div>
+					<% if @user %>
+						<div class="welcome">
+							Hi <%= @user.first_name %>! - <%= link_to "(log out)", logout_path, :method => :delete %>
+						</div>
+					<% else %>
+						<div class="welcome">
+							Never miss a race registration again.
+						</div>
+					<% end %>
+				</nav>
+			</header>
+			<div class="main">
+				<%= yield %>
+			</div>
+			<footer>
+				<div style="float:left;margin-top:7px">
+					<%= link_to "About", "" %><%= link_to "Contact", "" %><%= link_to "Privacy", "" %><%= link_to "Terms", "" %><% if not logged_in?  %> - <%= link_to "Sign in", login_url %><% else %>- <%= link_to "Sign out", logout_path, :method => :delete %><% end %>
+				</div>
+				<div style="float:right"><%= link_to image_tag("twitter.png", :alt => "@utellmewhen"), "http://www.twitter.com/utellmewhen" %>
+					<%= link_to image_tag("builtinchicago_logo_badge.png", :alt => "Built in Chicago"), "http://www.builtinchicago.org" %>
+				</div>
+			</footer>
+		</div>
+	</div>
   	<%#= render "shared/getsatisfaction" %>
   	<%#= render "shared/googleanalytics" %>
-
 </body>
 </html>

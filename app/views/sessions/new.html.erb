@@ -1,23 +1,44 @@
-<h1>Sign in:</h1>
-
-<%= form_tag '/sessions/create' do %>
-<div class="clearfix">
-	<%= label_tag 'Email: ' %>
-	<div class="input">
-		<%= text_field_tag :email %>
+<div class="steps">
+	</h2>Sign in to manage your questions and see your answers.</h2>
+</div>
+<div class="question">
+	<!-- <p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p> -->
+	<% if @user and @user.errors.any? %>
+		<div id="error_explanation">
+			<ul>
+				<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="clearfix">
+		<div class="input">
+			<h1>Sign in:</h1>
+		</div>
 	</div>
-</div>
-<div class="clearfix">
-	<%= label_tag 'Password: ' %>
-	<div class="input">
-		<%= password_field_tag :password %>
+	<%= form_tag '/sessions/create' do %>
+	<div class="clearfix">
+		<%= label_tag 'Email: ' %>
+		<div class="input">
+			<%= text_field_tag :email %>
+		</div>
 	</div>
+	<div class="clearfix">
+		<%= label_tag 'Password: ' %>
+		<div class="input">
+			<%= password_field_tag :password %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<div class="input">
+			<%= submit_tag 'Sign In', :class => "button"  %>
+		</div>
+	</div>
+	<% end %>
 </div>
-<!-- <div class="input"> --><p>
-	<%= submit_tag 'Sign In', :class => "button"  %>
-</p><!-- </div> -->
-<% end %>
 
-<div class="login">
-	<h3>or <%= link_to "create an Account", new_user_url %></h3>
-</div>
+<!-- <div class="login">
+	<h3>or <%#= link_to "create an Account", new_user_url %></h3>
+</div> -->

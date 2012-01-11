@@ -1,21 +1,40 @@
-<div>
-	<h1>Never miss a race registration again.</h1>
+<div class="steps">
+	<div class="num">
+		<div class="count">
+		1
+		</div>
+		<div class="text">
+		Enter the race you want to register for and your email address.
+		</div>
+	</div>
+	<div class="num">
+		<div class="count">
+		2
+		</div>
+		<div class="text">
+		We'll send you an email the day the registration opens.
+		</div>
+	</div>
+	<div class="num nobar">
+		<div class="count">
+		3
+		</div>
+		<div class="text">
+		You never miss a race registration again in your life.
+		</div>
+	</div>
 </div>
-
-<!-- <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p> -->
-<% if @user and @user.errors.any? %>
-<div id="error_explanation">
-	<ul>
-		<% @user.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-		<% end %>
-	</ul>
-</div>
-<% end %>
-
-<%= render 'questions/search'%>
-
-<div>
-	<h2>We'll send you three emails: one today to register (optional), one when the registration date is announced and one the day of the registration.</h2>
+<div class="question">
+	<!-- <p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p> -->
+	<% if @user and @user.errors.any? %>
+		<div id="error_explanation">
+			<ul>
+				<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<%= render 'questions/search'%>
 </div>
