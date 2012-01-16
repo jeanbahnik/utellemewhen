@@ -1,5 +1,5 @@
 <% if not logged_in?  %>
-<div class="clearfix">
+<div class="clearform">
 	<div class="input">
 		<h1>Tell us:</h1>
 	</div>
@@ -7,7 +7,7 @@
 <% end %>
 
 <%= form_tag questions_path, :id => "question" do %>
-<div class="clearfix">
+<div class="clearform">
 	<%= label_tag :name, "Event: " %>
 	<div class="input">
 		<%= text_field_tag :name, nil, data: {autocomplete_source: race_names_path}, :placeholder => 'Name of the event' %>
@@ -15,7 +15,7 @@
 </div>
 
 <% if not logged_in?  %>
-	<div class="clearfix">
+	<div class="clearform">
 		<%= label_tag :email, "Email: " %>
 		<div class="input">
 			<%= text_field_tag :email, nil, :placeholder => 'Your email' %>
@@ -23,7 +23,7 @@
 	</div>
 <% end %>
 
-<div class="clearfix">
+<div class="clearform">
 	<div class="input">
 		<%= submit_tag "Submit", :class => "button" %>
 	</div>

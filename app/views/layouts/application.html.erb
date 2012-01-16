@@ -7,38 +7,34 @@
   <%= csrf_meta_tags %>
   <meta content='width=device-width, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
 </head>
-<body id="index">
-	<div class="container">
-		<div class="box">
-			<header>
-				<nav>
-					<div class="url">
-						<a href="<%= root_url %>" title="Home">Home</a>
+<body id="<%= controller.action_name %>">
+	<div class="wrap">
+		<header>
+			<nav>
+				<div class="logo">
+					<%= link_to "Home", root_url %>
+				</div>
+				<% if logged_in? %>
+					<div class="welcome">
+						Hi <%= @user.first_name %>! (<%= link_to "edit profile", edit_user_path(current_user) %> - <%= link_to "sign out", logout_path, :method => :delete %>)
 					</div>
-					<% if @user %>
-						<div class="welcome">
-							Hi <%= @user.first_name %>! - <%= link_to "(log out)", logout_path, :method => :delete %>
-						</div>
-					<% else %>
-						<div class="welcome">
-							Never miss a race registration again.
-						</div>
-					<% end %>
-				</nav>
-			</header>
-			<div class="main">
-				<%= yield %>
-			</div>
-			<footer>
-				<div style="float:left;margin-top:7px">
-					<%= link_to "About", "" %><%= link_to "Contact", "" %><%= link_to "Privacy", "" %><%= link_to "Terms", "" %><% if not logged_in?  %> - <%= link_to "Sign in", login_url %><% else %>- <%= link_to "Sign out", logout_path, :method => :delete %><% end %>
-				</div>
-				<div style="float:right"><%= link_to image_tag("twitter.png", :alt => "@utellmewhen"), "http://www.twitter.com/utellmewhen" %>
-					<%= link_to image_tag("builtinchicago_logo_badge.png", :alt => "Built in Chicago"), "http://www.builtinchicago.org" %>
-				</div>
-			</footer>
+				<% else %>
+					<div class="welcome">Never miss a race registration again.</div>
+				<% end %>
+			</nav>
+		</header>
+		<div class="main clearfix">
+			<%= yield %>
 		</div>
 	</div>
+	<footer>
+		<div style="float:left;margin-top:7px">
+			<%= link_to "About", "" %><%= link_to "Contact", "" %><%= link_to "Privacy", "" %><%= link_to "Terms", "" %><% if not logged_in?  %> - <%= link_to "Sign in", login_url %><% else %>-<%= link_to "Sign out", logout_path, :method => :delete %><% end %>
+		</div>
+		<div style="float:right"><%= link_to image_tag("twitter.png", :alt => "@utellmewhen"), "http://www.twitter.com/utellmewhen" %>
+			<%= link_to image_tag("builtinchicago_logo_badge.png", :alt => "Built in Chicago"), "http://www.builtinchicago.org" %>
+		</div>
+	</footer>
   	<%#= render "shared/getsatisfaction" %>
   	<%#= render "shared/googleanalytics" %>
 </body>

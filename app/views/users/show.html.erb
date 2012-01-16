@@ -1,19 +1,18 @@
-<div class="box">
-	<div class="inside_box">
-		<h2>Add a new event:</h2>
-		<%= render 'questions/search' %>
-
-		<% if @user.questions.count > 0 %>
-			</div>
+<div class="steps">
+	<% if @user.questions.count > 0 %>
+		<div>
+			<h2>Your events:</h2>
+			<ul>
+				<% @user.questions.each do |s| %>
+				<li id="<%= dom_id(s) %>"><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago) <%= link_to "Delete", user_question_delete_url(s), :method => :delete %></li>
+				<% end %>
+			</ul>
 		</div>
-			<div class="box">
-				<div class="inside_box">
-					<div class="user-searches">
-						<h2>Your events:</h2>
-						<ul>
-						<% @user.questions.each do |s| %>
-							<li id="<%= dom_id(s) %>"><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago) <%= link_to "Delete", user_question_delete_url(s), :method => :delete %></li>
-						<% end %>
-						</ul>
-					</div>
-		<% end %>
+	<% else %>
+		Your events will show here. You are not watching any events at this time.
+	<% end %>
+</div>
+<div class="question">
+	<h2>Add a new event:</h2>
+	<%= render 'questions/search' %>
+</div>

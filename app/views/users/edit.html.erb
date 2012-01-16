@@ -1,2 +1,11 @@
-<h2>Complete your profile:</h2>
-<%= render 'form' %>
+<div class="steps">
+	Edit your profile. Leave password and/or email blank if you wish to keep the same password.
+</div>
+<div class="question">
+	<% if @user.registered == false %>
+		<h2>Complete your profile:</h2>
+	<% else %>
+		<h2>Edit your profile:</h2>
+	<% end %>
+	<%= render 'form' %>
+</div>
