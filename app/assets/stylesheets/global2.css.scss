@@ -80,7 +80,32 @@ body > #wrap {
 	width: 800px;
 }
 
-#show, #edit, .wrap {
+#show .wrap {
+	min-height: 100%;
+	margin-top: 0;
+}
+
+#edit .wrap {
+	min-height: 100%;
+	margin-top: 0;
+}
+
+#about .wrap {
+	min-height: 100%;
+	margin-top: 0;
+}
+
+#contactus .wrap {
+	min-height: 100%;
+	margin-top: 0;
+}
+
+#terms .wrap {
+	min-height: 100%;
+	margin-top: 0;
+}
+
+#privacy .wrap {
 	min-height: 100%;
 	margin-top: 0;
 }
@@ -136,7 +161,27 @@ header {
 	}
 }
 
-#show, #edit, header {
+#show header {
+	margin-top: 0;
+}
+
+#edit header {
+	margin-top: 0;
+}
+
+#privacy header {
+	margin-top: 0;
+}
+
+#terms header {
+	margin-top: 0;
+}
+
+#contactus header {
+	margin-top: 0;
+}
+
+#about header {
 	margin-top: 0;
 }
 
@@ -166,6 +211,11 @@ header {
 	& li {
 		margin-top: 15px;
 	}
+}
+
+.pages {
+	margin: 0 auto;
+	width: 90%;
 }
 
 .num {
