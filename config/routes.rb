@@ -25,5 +25,10 @@ Tellmewhen::Application.routes.draw do
 
   root :to => "users#show", :constraints => LoggedInConstraint.new(true)
   root :to => "home#index"
+  
+  get "pages/about", :as => :about
+  get "pages/contactus", :as => :contactus
+  get "pages/terms", :as => :terms
+  get "pages/privacy", :as => :privacy
 
 end

@@ -29,7 +29,7 @@
 	</div>
 	<footer>
 		<div style="float:left;margin-top:7px">
-			<%= link_to "About", "" %><%= link_to "Contact", "" %><%= link_to "Privacy", "" %><%= link_to "Terms", "" %><% if not logged_in?  %> - <%= link_to "Sign in", login_url %><% else %>-<%= link_to "Sign out", logout_path, :method => :delete %><% end %>
+			<%= link_to "About", about_url %><%= link_to "Contact", contactus_url %><%= link_to "Privacy", privacy_url %><%= link_to "Terms", terms_url %><% if not logged_in?  %> - <%= link_to "Sign in", login_url %><% else %>-<%= link_to "Sign out", logout_path, :method => :delete %><% end %>
 		</div>
 		<div style="float:right"><%= link_to image_tag("twitter.png", :alt => "@utellmewhen"), "http://www.twitter.com/utellmewhen" %>
 			<%= link_to image_tag("builtinchicago_logo_badge.png", :alt => "Built in Chicago"), "http://www.builtinchicago.org" %>
