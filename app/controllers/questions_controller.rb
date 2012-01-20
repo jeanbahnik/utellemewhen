@@ -68,6 +68,7 @@ class QuestionsController < ApplicationController
           format.html { redirect_to home_thank_you_path(:betold => @betold, :email => @email)}
         end
       else
+        raise "HELLO!".inspect
         format.html { render :action => "new" }
         format.json { render :json => @uSearch.errors, :status => :unprocessable_entity }
       end

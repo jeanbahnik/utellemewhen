@@ -13,7 +13,7 @@ class Question < ActiveRecord::Base
       uq = user.user_questions.build
       uq.question = question
       uq.save
-      return true
+      return false
     end
   end
 end

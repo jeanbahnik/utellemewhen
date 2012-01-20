@@ -6,23 +6,37 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
-Event.create :name => "Prodigy Run"
+first = Event.create :name => "Prodigy Run"
+first.event_dates.create(name: "Regisration", date: Date.today + 20)
+first.event_dates.create(name: "Race", date: Date.today + 40)
 puts "Created a race"
 
-Event.create :name => "Chicago's Perfect 10"
+second = Event.create :name => "Chicago's Perfect 10"
+second.event_dates.create(name: "Regisration", date: Date.today + 60)
+second.event_dates.create(name: "Race", date: Date.today + 80)
 puts "Created a race"
 
-Event.create :name => "Pilgrim Pacer 5-K"
+third = Event.create :name => "Pilgrim Pacer 5-K"
+third.event_dates.create(name: "Regisration", date: Date.today + 100)
+third.event_dates.create(name: "Race", date: Date.today + 120)
 puts "Created a race"
 
-Event.create :name => "Chicago Marathon 2012" 
+fourth = Event.create :name => "Chicago Marathon 2012" 
+fourth.event_dates.create(name: "Regisration", date: Date.today + 140)
+fourth.event_dates.create(name: "Race", date: Date.today + 160)
 puts "Created a race"
 
-Event.create :name => "Chicago Marathon 2013"
+fifth = Event.create :name => "Chicago Marathon 2013"
+fifth.event_dates.create(name: "Regisration", date: Date.today + 180)
+fifth.event_dates.create(name: "Race", date: Date.today + 200)
 puts "Created a race"
 
-Event.create :name => "Freedom Half Marathon"
+sixth = Event.create :name => "Freedom Half Marathon"
+sixth.event_dates.create(name: "Regisration", date: Date.today + 220)
+sixth.event_dates.create(name: "Race", date: Date.today + 240)
 puts "Created a race"
 
-Event.create :name => "Wine Vine Run Half-Marathon & 5-K"
+seventh = Event.create :name => "Wine Vine Run Half-Marathon & 5-K"
+seventh.event_dates.create(name: "Regisration", date: Date.today + 60)
+seventh.event_dates.create(name: "Race", date: Date.today + 80)
 puts "Created a race"
