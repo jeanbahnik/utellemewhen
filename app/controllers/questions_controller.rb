@@ -48,6 +48,15 @@ class QuestionsController < ApplicationController
     # @uSearch = @user.questions.build(params[:question])
     @uSearch.users << @user
     @uSearch.name = params[:name]
+    
+    # if Event.find_by_name(@uSearch.name)
+    #   user = @uSearch.users.last
+    #   uq = user.user_questions.build
+    #   uq.question = @uSearch
+    #   uq.save
+    #   @uSearch = false
+    # end
+    
     #raise @uSearch.users.inspect
     #@user.questions.build_user_question(:uSearch)
     respond_to do |format|
