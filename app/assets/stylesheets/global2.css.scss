@@ -80,32 +80,7 @@ body > #wrap {
 	width: 800px;
 }
 
-#show .wrap {
-	min-height: 100%;
-	margin-top: 0;
-}
-
-#edit .wrap {
-	min-height: 100%;
-	margin-top: 0;
-}
-
-#about .wrap {
-	min-height: 100%;
-	margin-top: 0;
-}
-
-#contactus .wrap {
-	min-height: 100%;
-	margin-top: 0;
-}
-
-#terms .wrap {
-	min-height: 100%;
-	margin-top: 0;
-}
-
-#privacy .wrap {
+#show .wrap, #edit .wrap, #privacy .wrap, #terms .wrap, #contactus .wrap, #about .wrap {
 	min-height: 100%;
 	margin-top: 0;
 }
@@ -161,27 +136,7 @@ header {
 	}
 }
 
-#show header {
-	margin-top: 0;
-}
-
-#edit header {
-	margin-top: 0;
-}
-
-#privacy header {
-	margin-top: 0;
-}
-
-#terms header {
-	margin-top: 0;
-}
-
-#contactus header {
-	margin-top: 0;
-}
-
-#about header {
+#show header, #edit header, #privacy header, #terms header, #contactus header, #about header  {
 	margin-top: 0;
 }
 
@@ -214,7 +169,7 @@ header {
 }
 
 .pages {
-	margin: 0 auto;
+	margin: 0 auto 20px auto;
 	width: 90%;
 }
 

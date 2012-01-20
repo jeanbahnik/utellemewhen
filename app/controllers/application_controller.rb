@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user
-    if logged_in? 
+    if logged_in?
       User.find(session[:user_id])
     else
       nil
