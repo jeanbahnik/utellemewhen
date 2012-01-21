@@ -6,6 +6,8 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
+User.create(email: "admin@admin.com", password: "admin", password_confirmation: "admin")
+
 first = Event.create :name => "Prodigy Run"
 first.event_dates.create(name: "Regisration", date: Date.today + 20)
 first.event_dates.create(name: "Race", date: Date.today + 40)
