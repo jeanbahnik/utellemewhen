@@ -1,5 +1,9 @@
 <div class="steps">
-	Edit your profile. Leave password and/or email blank if you wish to keep the same password.
+	<% if @user.registered == false %>
+		Thank you, we will send you an email when we find out about the registration date for the <%= params[:betold] %> race. An email has been sent to <%= params[:email] %> to complete the registration.
+	<% else %>
+		Edit your profile. Leave password and/or email blank if you wish to keep the same password.
+	<% end %>
 </div>
 <div class="question">
 	<% if @user.registered == false %>

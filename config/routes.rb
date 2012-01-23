@@ -4,11 +4,6 @@ Tellmewhen::Application.routes.draw do
   
   get "users/join" => "users#join", :as => :join
   
-  # devise_for :users
-  # devise_for :users do
-  #  get 'users', :to => 'users#show', :as => :user_root
-  # end
-
   get "home/index"
   get "home/thank_you"
 
@@ -30,5 +25,7 @@ Tellmewhen::Application.routes.draw do
   get "pages/contactus", :as => :contactus
   get "pages/terms", :as => :terms
   get "pages/privacy", :as => :privacy
+  
+  # match '/auth/:provider/callback', to: 'users#update'
 
 end

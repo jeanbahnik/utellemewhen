@@ -52,8 +52,9 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = User.find(params[:id])
-    user_params = params[:user]
+    @user = current_user
+    # user_params = params[:user]
+    # raise request.env['omniauth.auth'].inspect
 
     respond_to do |format|
       if @user.update_attributes(params[:user])

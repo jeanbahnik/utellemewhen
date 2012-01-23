@@ -54,7 +54,12 @@ class QuestionsController < ApplicationController
       uq.user = @user
       uq.question = question
       uq.save
-      redirect_to root_url
+      if logged_in?
+        redirect_to root_url
+      else
+        session[:user_id] = @user
+        redirect_to edit_user_path(@user, :betold => @betold, :email => @email)
+      end
       return
     end
 
@@ -64,7 +69,8 @@ class QuestionsController < ApplicationController
           format.html { redirect_to user_path(@user), :notice => 'A query was successfully created.' }
           format.json { render :json => @uSearch, :status => :created, :location => @uSearch }
         else
-          format.html { redirect_to home_thank_you_path(:betold => @betold, :email => @email)}
+          session[:user_id] = @user
+          format.html { redirect_to edit_user_path(@user, :betold => @betold, :email => @email)}
         end
       else
         format.html { render :action => "new" }
