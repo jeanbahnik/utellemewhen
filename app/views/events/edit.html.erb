@@ -1,0 +1,16 @@
+<h1>Edit "<%= @event.name %>"</h1>
+<%= form_for @event do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br />
+  
+  <!-- <#%= form.fields_for :event_dates do |event_date| %>
+    
+    <#%= event_date.text_field :name %>
+    <br />
+    <#%= event_date.date_select :date %>
+    <br />
+  <#% end %>
+  <br /> -->
+  <%= form.submit %>
+<% end %>

@@ -1,38 +1,38 @@
-<h1>Race Search Page</h1>
+<!-- <h1>Race Search Page</h1>
 
 <div>
-	
-	<table>
-	  <tr>
-	    <th>Name</th>
-	    <th>City</th>
-	    <th>Type</th>
-	    <th>Registration on</th>
-	    <th>Race on</th>
-	    <th>Size</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
-	  </tr>
+  
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Type</th>
+      <th>Registration on</th>
+      <th>Race on</th>
+      <th>Size</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-	<% @races.each do |race| %>
-	  <tr>
-	    <td><%= race.name %></td>
-	    <td><%= race.city %></td>
-	    <td><%= race.race_type %></td>
-	    <td><%= race.registration_on %></td>
-	    <td><%= race.race_on %></td>
-	    <td><%= race.size %></td>
-	    <td><%= link_to 'Show', race %></td>
-	    <td><%= link_to 'Edit', edit_race_path(race) %></td>
-	    <td><%= link_to 'Destroy', race, :confirm => 'Are you sure?', :method => :delete %></td>
-	  </tr>
-	<% end %>
-	</table>
+  <% @races.each do |race| %>
+    <tr>
+      <td><%= race.name %></td>
+      <td><%= race.city %></td>
+      <td><%= race.race_type %></td>
+      <td><%= race.registration_on %></td>
+      <td><%= race.race_on %></td>
+      <td><%= race.size %></td>
+      <td><%= link_to 'Show', race %></td>
+      <td><%= link_to 'Edit', edit_race_path(race) %></td>
+      <td><%= link_to 'Destroy', race, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 
-	<br />
+  <br />
 
-	<% if admin? %>
-	<%= link_to 'New Race', new_race_path %>
-	<% end %>
-</div>
+  <% if admin? %>
+  <%= link_to 'New Race', new_race_path %>
+  <% end %>
+</div> -->

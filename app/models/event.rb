@@ -2,9 +2,10 @@ class Event < ActiveRecord::Base
   
   after_save :create_question
   
-  
   has_many :answers
   has_many :event_dates
+  
+  accepts_nested_attributes_for :event_dates  
   
   def create_question
     question = Question.create(name: self.name)

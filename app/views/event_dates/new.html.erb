@@ -1,0 +1,14 @@
+<h1>Event Dates for "<%= @event.name %>"</h1>
+
+<%= form_for @event_date, url: event_dates_url(event: @event) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br />
+  
+  <%= form.label :date %>
+  <%= form.date_select :date %><br />
+  
+  <%= form.submit %>
+  
+<% end %>
+
+

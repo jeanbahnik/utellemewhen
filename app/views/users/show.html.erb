@@ -1,20 +1,28 @@
-<div class="steps">
-	<% if @user.questions.count > 0 %>
+<div>
+  <h2>Add a new event:</h2>
+	<%= render 'questions/search' %>
+</div>
+<hr />
+<div>
+  <% if @user.questions.count > 0 %>
 		<div>
 			<h2>Your events:</h2>
 			<ul>
-				<% @user.questions.each do |s| %>
-				<li id="<%= dom_id(s) %>"><%= s.name %> (created <%= time_ago_in_words(s.created_at.to_time) %> ago) <%= link_to "Delete", user_question_delete_url(s), :method => :delete %></li>
+				<% @user.user_questions.each do |uq| %>
+				<li id="<%= dom_id(uq) %>">
+				  <%= uq.question.name %> (created <%= time_ago_in_words(uq.created_at.to_time) %> ago) <%= link_to "Delete", user_question_delete_url(uq.id), :method => :delete %>
+				</li>
 				  <ul>
-				    <% s.answers.each do |a| %>
+				    <% uq.question.answers.each do |a| %>
 				      <li>
-				        >><%= a.event.name %>
+				        => <%= a.event.name %>
 				        <ul>
 				          <% a.event.event_dates.each do |ed| %>
-                    <li><%= ed.name %></li>
-                    <li><%= ed.date %></li>                    
+                    <li>
+                      <%= ed.name %>: <%= ed.date.strftime("%B %d, %Y") %> (<%= ed.days_left %> days left)
+                    </li>
 				          <% end %>
-				        </ul>
+				        </ul><br />
 				      </li>
 				    <% end %>
 				  </ul>
@@ -24,8 +32,4 @@
 	<% else %>
 		Your events will show here. You are not watching any events at this time.
 	<% end %>
-</div>
-<div class="question">
-	<h2>Add a new event:</h2>
-	<%= render 'questions/search' %>
 </div>

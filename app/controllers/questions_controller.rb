@@ -1,5 +1,9 @@
 class QuestionsController < ApplicationController
 
+  def index
+    @questions = Question.all
+  end
+
   def show
     @uSearch = Questions.find(params[:id])
 
