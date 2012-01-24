@@ -13,11 +13,11 @@
 				  <%= uq.question.name %> (created <%= time_ago_in_words(uq.created_at.to_time) %> ago) <%= link_to "Delete", user_question_delete_url(uq.id), :method => :delete %>
 				</li>
 				  <ul>
-				    <% uq.question.answers.each do |a| %>
+				    <% uq.answers.each do |a| %>
 				      <li>
 				        => <%= a.event.name %>
 				        <ul>
-				          <% a.event.event_dates.each do |ed| %>
+				          <% a.event_dates.each do |ed| %>
                     <li>
                       <%= ed.name %>: <%= ed.date.strftime("%B %d, %Y") %> (<%= ed.days_left %> days left)
                     </li>
@@ -26,6 +26,7 @@
 				      </li>
 				    <% end %>
 				  </ul>
+				  <hr />
 				<% end %>
 			</ul>
 		</div>

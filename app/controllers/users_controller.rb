@@ -1,12 +1,8 @@
 class UsersController < ApplicationController
   
   before_filter :require_user, :except => [:new, :create]
-  # before_filter :authenticate_user!, :except => [:new, :create, :join]
 
-  # GET /users/1
-  # GET /users/1.json
   def show
-    # @user = User.find(params[:id])
     @user = current_user
 
     respond_to do |format|
@@ -15,8 +11,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/new
-  # GET /users/new.json
   def new
     @user = User.new
 
@@ -26,13 +20,10 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1/edit
   def edit
 
   end
 
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(params[:user])
 
@@ -49,12 +40,8 @@ class UsersController < ApplicationController
     end
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
   def update
     @user = current_user
-    # user_params = params[:user]
-    # raise request.env['omniauth.auth'].inspect
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -67,8 +54,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
     @user.destroy

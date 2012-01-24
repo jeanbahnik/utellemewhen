@@ -20,7 +20,6 @@ class EventDatesController < ApplicationController
   
   def update
     event_date = EventDate.find_by_id(params[:id])
-    # event = Event.find_by_id(params[:event])
     event_date.update_attributes(params[:event_date])
     redirect_to event_url(event_date.event)
   end

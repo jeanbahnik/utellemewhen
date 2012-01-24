@@ -1,11 +1,18 @@
 class UserQuestionsController < ApplicationController
-
-  # DELETE /races/1
-  # DELETE /races/1.json
+  
+  before_filter :require_user, only: :create
+  
+  def create
+    event = Event.find(params[:event])
+    user_question = UserQuestion.new
+    user_question.user = current_user
+    user_question.question = event.questions.first
+    user_question.save
+    redirect_to current_user
+  end
+  
   def destroy
-    uq = current_user.user_questions.find_by_id(params[:id])
-    # uq.destroy_all <-- does not work
-    uq.destroy
+    current_user.user_questions.find_by_id(params[:id]).destroy
 
     respond_to do |format|
       format.js

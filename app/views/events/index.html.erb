@@ -2,7 +2,8 @@
 <ul>
   <% @events.each do |event| %>
     <li>
-      <%= link_to event.name, event_url(event) %>
+      <%= link_to event.name, event_url(event) %> - 
+      <%= link_to "Join", user_questions_url(event: event), method: :post %> - 
       <%= link_to "Edit", edit_event_url(event) %>
     </li>
   <% end %>
