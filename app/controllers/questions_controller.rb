@@ -61,7 +61,7 @@ class QuestionsController < ApplicationController
       if logged_in?
         redirect_to root_url
       else
-        session[:user_id] = @user
+        cookies.signed[:user_id] = @user
         redirect_to edit_user_path(@user, :betold => @betold, :email => @email)
       end
       return
@@ -73,7 +73,7 @@ class QuestionsController < ApplicationController
           format.html { redirect_to user_path(@user), :notice => 'A query was successfully created.' }
           format.json { render :json => @uSearch, :status => :created, :location => @uSearch }
         else
-          session[:user_id] = @user
+          sign_in_user(@user)
           format.html { redirect_to edit_user_path(@user, :betold => @betold, :email => @email)}
         end
       else

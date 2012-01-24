@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         UserMailer.new_user_email(@user).deliver
-        session[:user_id] = @user.id
+        sign_in_user(@user)
         format.html { redirect_to :root, :notice => 'Thanks for signing up!' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else

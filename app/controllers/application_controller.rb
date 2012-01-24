@@ -8,19 +8,19 @@ class ApplicationController < ActionController::Base
   end
   
   def logged_in?
-    session[:user_id].present?
+    cookies.signed[:user_id].present?
   end
   
   def current_user
     if logged_in?
-      User.find(session[:user_id])
+      User.find(cookies.signed[:user_id])
     else
       nil
     end
   end
   
   def require_admin 
-    if session[:user_id]
+    if logged_in?
       if !current_user.admin?
         redirect_to root_url, :notice => "Nice try!"
       end
@@ -30,12 +30,12 @@ class ApplicationController < ActionController::Base
   end
   
   def require_user 
-    if session[:user_id]
-      @user = User.find(session[:user_id])
+    if logged_in?
+      @user = current_user
     elsif params[:e].present? and params[:m].present?
       @user = User.find_by_email(params[:e])
       if @user && @user.email_token == params[:m]
-        session[:user_id] = @user.id
+        sign_in_user(@user)
         flash[:notice] = "Thanks for signing in!"
         puts "email link validated"
       else
@@ -46,6 +46,10 @@ class ApplicationController < ActionController::Base
     else
       redirect_to login_path, :notice => "You must be logged in to do this."
     end
+  end
+  
+  def sign_in_user(user)
+    cookies.signed[:user_id] = user.id
   end
   
 end

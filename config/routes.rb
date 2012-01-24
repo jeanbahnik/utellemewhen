@@ -18,11 +18,10 @@ Tellmewhen::Application.routes.draw do
   get "sessions/new", :as => :login
 
   get "users/join" => "users#join", :as => :join
-  
 
-  root :to => "users#show", :constraints => LoggedInConstraint.new(true)
+  # root :to => "users#show", :constraints => LoggedInConstraint.new(true)
   root :to => "pages#index"
-  
+
   get "pages/about", :as => :about
   get "pages/contactus", :as => :contactus
   get "pages/terms", :as => :terms
