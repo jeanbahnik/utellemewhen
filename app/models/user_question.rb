@@ -4,5 +4,4 @@ class UserQuestion < ActiveRecord::Base
   belongs_to :question
   has_many :answers, through: :question
   
-  
 end

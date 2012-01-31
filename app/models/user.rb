@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   include ActiveModel::Validations
 
   has_secure_password
-  has_many :user_races
-  has_many :races, :through => :user_races
+  # has_many :user_races
+  # has_many :races, :through => :user_races
   has_many :user_questions
   has_many :questions, :through => :user_questions
   

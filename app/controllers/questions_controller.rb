@@ -18,21 +18,22 @@ class QuestionsController < ApplicationController
     @uSearch = Questions.find(params[:id])
   end
 
-  def generate_temp_password(len)
-    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
-    newpass = ""
-    1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
-    return newpass
-  end
+  # def generate_temp_password(len)
+  #   chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+  #   newpass = ""
+  #   1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
+  #   return newpass
+  # end
 
   # POST /races
   # POST /races.json
   def create
+    p cookies.signed[:user_id].present?
     if not logged_in?
 
       # generate a temporary user password
-      new_password = generate_temp_password(8)
-      new_email_token = generate_temp_password(8)
+      new_password = SecureRandom.hex(4)
+      new_email_token = SecureRandom.hex(4)
 
       @user = User.new :email => params[:email], :password => new_password, :password_confirmation => new_password, :registered => false, :email_token => new_email_token
       @betold = params[:name]

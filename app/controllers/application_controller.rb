@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
   
   def logged_in?
-    cookies.signed[:user_id].present?
+    cookies[:user_id].present?
   end
   
   def current_user
