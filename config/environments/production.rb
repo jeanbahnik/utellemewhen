@@ -31,8 +31,8 @@ Tellmewhen::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :user_name => <% ENV["sendgrid_USERNAME"] %>,
-    :password => <% ENV["sendgrid_PASSWORD"] %>,
+    :user_name => ENV["sendgrid_USERNAME"],
+    :password => ENV["sendgrid_PASSWORD"],
     :domain => "utellmewhen.com",
     :address => "smtp.sendgrid.net",
     :port => 587,
