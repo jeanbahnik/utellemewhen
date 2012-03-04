@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
 
   include ActiveModel::Validations
 
-  has_secure_password
+  # has_secure_password
+  has_many :authorizations
   # has_many :user_races
   # has_many :races, :through => :user_races
   has_many :user_questions
@@ -14,5 +15,9 @@ class User < ActiveRecord::Base
   
   # custom validator 
   validates_with RegisteredValidator, :on => :update
+  
+  def self.create_from_hash!(hash)
+    create(:name => hash['info']['name'])
+  end
 
 end

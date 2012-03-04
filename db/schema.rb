@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131210813) do
+ActiveRecord::Schema.define(:version => 20120131234516) do
 
   create_table "answers", :force => true do |t|
     t.integer  "event_id"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(:version => 20120131210813) do
   end
 
   add_index "answers", ["event_id", "question_id"], :name => "index_answers_on_event_id_and_question_id", :unique => true
+
+  create_table "authorizations", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "event_dates", :force => true do |t|
     t.string   "name"

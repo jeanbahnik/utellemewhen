@@ -1,5 +1,7 @@
 Tellmewhen::Application.routes.draw do
   
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  
   require File.expand_path("../../lib/logged_in_constraint", __FILE__)  
 
   # resources :races
@@ -8,7 +10,7 @@ Tellmewhen::Application.routes.draw do
   resources :answers
   resources :questions
   resources :users
-  resources :race_names
+  resources :event_names
 
   resources :user_questions
   delete "user_question_delete/:id" => 'UserQuestions#destroy', :as => :user_question_delete
@@ -29,6 +31,10 @@ Tellmewhen::Application.routes.draw do
   get "pages/index"
   get "pages/thank_you"
   
-  # match '/auth/:provider/callback', to: 'users#update'
-  
+  get '/auth/failure' do
+    p "oho"
+    flash[:notice] = params[:message] # if using sinatra-flash or rack-flash
+    # redirect '/'
+  end
+    
 end

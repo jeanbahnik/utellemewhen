@@ -13,7 +13,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # GET /races/1/edit
   def edit
     @uSearch = Questions.find(params[:id])
   end
@@ -25,24 +24,21 @@ class QuestionsController < ApplicationController
   #   return newpass
   # end
 
-  # POST /races
-  # POST /races.json
   def create
-    p cookies.signed[:user_id].present?
     if not logged_in?
 
       # generate a temporary user password
-      new_password = SecureRandom.hex(4)
+      # new_password = SecureRandom.hex(4)
       new_email_token = SecureRandom.hex(4)
 
-      @user = User.new :email => params[:email], :password => new_password, :password_confirmation => new_password, :registered => false, :email_token => new_email_token
+      @user = User.new :email => params[:email], :registered => false, :email_token => new_email_token#:password => new_password, :password_confirmation => new_password, 
       @betold = params[:name]
       @email = @user.email
       
       if @user.save
         UserMailer.auto_generated_user_email(@user, new_email_token, @betold).deliver
       else
-        render 'home/index'
+        render 'pages/index'
         return
       end
     else
@@ -84,8 +80,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # PUT /races/1
-  # PUT /races/1.json
   def update
     @uSearch = Question.find(params[:id])
     
@@ -100,8 +94,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # DELETE /races/1
-  # DELETE /races/1.json
   def destroy
     @uSearch = Question.find(params[:id])
     @uSearch.destroy
